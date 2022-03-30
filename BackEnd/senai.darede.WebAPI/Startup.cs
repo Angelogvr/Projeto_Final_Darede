@@ -27,7 +27,7 @@ namespace senai.darede.WebAPI
                 c.SwaggerDoc("v1", new OpenApiInfo
                 {
                     Version = "v1",
-                    Title = "Wishlist.webApi"
+                    Title = "Darede.webApi"
                 });
 
                 // Set the comments path for the Swagger JSON and UI.
@@ -49,7 +49,7 @@ namespace senai.darede.WebAPI
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Wishlist.webApi");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Darede.webApi");
                 c.RoutePrefix = string.Empty;
             });
 

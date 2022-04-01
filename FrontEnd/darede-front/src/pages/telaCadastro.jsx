@@ -10,7 +10,7 @@ function App() {
     <div class='box-body'>
       <div class="esquerda">
         <img src={logo} alt="logo Darede" />
-        <img src={banner} alt="banner cadastro" />
+        <img src={banner} class='undraw' alt="banner cadastro" />
       </div>
       <div class="direita">
         <h1>Cadastro</h1>

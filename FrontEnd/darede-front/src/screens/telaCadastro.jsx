@@ -5,7 +5,7 @@ import tel from '../assets/icon-telefone.svg'
 import globo from '../assets/icon-globo.svg'
 import '../style/telaCadastro.css'
 
-function App() {
+function telaCadastro() {
   return (
     <div class='box-body'>
       <div class="esquerda">
@@ -38,4 +38,4 @@ function App() {
   );
 }
 
-export default App;
+export default telaCadastro;

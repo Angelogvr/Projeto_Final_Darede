@@ -14,13 +14,13 @@ h1 {
     margin-top: 20px;
 }
 
-.box-body{
+.box-bodyL{
     display: flex;
     flex-direction: row;
     height: 837px;
 }
 
-.esquerda{
+.esquerdaL{
     background-color:#00964F;
     width: 100%;
     display: flex;
@@ -29,7 +29,7 @@ h1 {
     justify-content: space-evenly;
 }
 
-.direita{
+.direitaL{
     background-color: #ffffff;
     width: 100%;
     display: flex;
@@ -38,7 +38,7 @@ h1 {
     justify-content: space-evenly;
 }
 
-.direita form{
+.direitaL form{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -46,7 +46,7 @@ h1 {
     height: 50%;
 }
 
-.direita input{
+.direitaL input{
     width: 18rem;
     height: 3rem;
     border-radius: 5px;
@@ -54,13 +54,13 @@ h1 {
     padding-left: 5px;
 }
 
-.direita input::placeholder{
+.direitaL input::placeholder{
     font-family: 'Open Sans', sans-serif;
     color: #627282;
     padding-left: 1px;
 }
 
-.btn-form{
+.btn-formL{
     font-family: 'Open Sans', sans-serif;
     font-weight: bold;
     font-size: large;
@@ -72,20 +72,20 @@ h1 {
     height: 3rem;
 }
 
-.conta{
+.contaL{
     font-family: 'Open Sans', 'sans-serif';
-    width: 250px;
+    width: 273px;
     display: flex;
     justify-content: space-around;
 }
 
-.conta a{
+.contaL a{
     font-family: 'Open Sans', sans-serif;
     color: #00AFF4;
     text-decoration: none;
 }
 
-.redirect{
+.redirectL{
     width: 80%;
     display: flex;
     flex-direction: row;
@@ -93,7 +93,7 @@ h1 {
     align-items: center;
 }
 
-.redirect button{
+.redirectL button{
     background: none;
 	color: inherit;
 	border: none;
@@ -108,7 +108,7 @@ h1 {
     font-family: 'Open Sans', sans-serif;
 }
 
-.redirect img{
+.redirectL img{
     width: 32px;
     height: 34px;
     margin-right: 7px;

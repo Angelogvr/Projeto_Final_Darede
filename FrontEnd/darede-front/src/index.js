@@ -2,18 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Route, BrowserRouter as Router, Redirect ,Switch } from 'react-router-dom';
 import './index.css';
-import App from './screens/telaCadastro';
 import reportWebVitals from './reportWebVitals';
 
 import telaCadastro from './screens/telaCadastro'
 import telaLogin from './screens/telaLogin'
-
-// ReactDOM.render(
-//   <React.StrictMode>
-//     <App />
-//   </React.StrictMode>,
-//   document.getElementById('root')
-// );
+import notFound from './screens/notFound';
 
 
 const routing = (
@@ -21,7 +14,9 @@ const routing = (
     <div>
       <Switch>
         <Route path="/cadastro" component={telaCadastro} /> {/* Cadastro */}
-        <Route path="/login" component={telaLogin} /> {/* Cadastro */}
+        <Route path="/login" component={telaLogin} /> {/* Login */}
+        <Route path="/notFound" component={notFound} /> {/* Not Found */}
+        <Redirect to="/notFound"/> {/* Redireciona para Not Found caso não encontre nenhuma rota */}
       </Switch>
     </div>
   </Router>

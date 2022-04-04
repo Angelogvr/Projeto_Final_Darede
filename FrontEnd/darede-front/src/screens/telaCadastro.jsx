@@ -5,25 +5,28 @@ import tel from '../assets/icon-telefone.svg'
 import globo from '../assets/icon-globo.svg'
 import '../style/telaCadastro.css'
 
+import telaLogin from './telaLogin'
+
+
 function telaCadastro() {
   return (
-    <div class='box-body'>
-      <div class="esquerda">
+    <div className='box-body'>
+      <div className="esquerda">
         <img src={logo} alt="logo Darede" />
-        <img src={banner} class='undraw' alt="banner cadastro" />
+        <img src={banner} className='undraw' alt="banner cadastro" />
       </div>
-      <div class="direita">
+      <div className="direita">
         <h1>Cadastro</h1>
         <form action="submit">
           <input type="text" placeholder="Nome de Usuário" />
           <input type="email" placeholder="Email" />
           <input type="password" placeholder="Senha" />
-          <button type="button" class="btn-form">Cadastrar</button>
+          <button type="button" className="btn-form">Cadastrar</button>
         </form>
-        <div class="conta">
-          <p>Já possui uma conta?</p> <a href="">Conecte-se.</a>
+        <div className="conta">
+          <p>Já possui uma conta?</p> <a href={telaLogin}>Conecte-se.</a>
         </div>
-        <div class="redirect">
+        <div className="redirect">
           <button>
             <img src={tel} alt="ícone entrar em contato"/>
             Entre em contato

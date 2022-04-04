@@ -5,6 +5,11 @@ import tel from '../assets/icon-telefone.svg'
 import globo from '../assets/icon-globo.svg'
 import '../style/telaLogin.css'
 
+import axios from 'axios'
+import { Component } from 'react';
+
+import telaCadastro from './telaCadastro'
+
 
 export default class Login extends Component {
   constructor(props) {
@@ -22,8 +27,7 @@ export default class Login extends Component {
 
     this.setState({ erroMensagem: "", isLoading: true })
 
-    /* alterar url da api*/
-    axios.post('http://localhost:5000/api/login', {
+    axios.post('http://localhost:5000/api/Logins/login', {
       email: this.state.email,
       senha: this.state.senha
     })
@@ -32,7 +36,7 @@ export default class Login extends Component {
         if (resposta.status === 200) {
           localStorage.setItem('usuario-login', resposta.data.token);
           this.setState({ isLoading: false });
-          this.props.history.push('/');
+            this.props.history.push('/');
         }
       })
       .catch(() => {
@@ -44,52 +48,56 @@ export default class Login extends Component {
     this.setState({ [campo.target.name]: campo.target.value })
   }
 
+  render() {
+    return (
+      <div className="box-bodyL">
+        <div className="esquerdaL">
+          <img src={logo} alt="logo Darede" />
+          <img src={banner} className="undrawL" alt="banner cadastro" />
+        </div>
+        <div className="direitaL">
+          <h1>Login</h1>
+          <form action="submit" onSubmit={this.efetuaLogin}>
+
+            <input type="email" placeholder="Email"
+              name="email"
+              value={this.state.email}
+              onChange={this.atualizaStateCampo} />
+
+            <input type="password" placeholder="Senha"
+              name="senha"
+              value={this.state.senha}
+              onChange={this.atualizaStateCampo} />
+
+            <p style={{ color: 'red' }}>{this.state.erroMensagem}</p>
+
+            {
+                this.state.isLoading === true &&
+                <button type="submit" disabled>Loading...</button>
+              }
+              {
+                this.state.isLoading === false &&
+                <button disabled={this.state.email === '' || this.state.senha === '' ? 'none' : ''} className="btn-formL" type="submit">Login</button>
+              }
+          </form>
+
+          <div className="contaL">
+            <p>Não possui uma conta?</p> <a href={telaCadastro}>Cadastre-se.</a>
+          </div>
+          <div className="redirectL">
+            <button>
+              <img src={tel} alt="ícone entrar em contato" />
+              Entre em contato
+            </button>
+            <button>
+              <img src={globo} alt="ícone acesse a darede" />
+              Acesse a Darede
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
 
-function telaLogin() {
-  return (
-    <div class="box-bodyL">
-      <div class="esquerdaL">
-        <img src={logo} alt="logo Darede" />
-        <img src={banner} class="undrawL" alt="banner cadastro" />
-      </div>
-      <div class="direitaL">
-        <h1>Login</h1>
-        <form action="submit" onSubmit={this.efetuaLogin}>
-
-          <input type="email" placeholder="Email"
-            name="email"
-            value={this.state.email}
-            onChange={this.atualizaStateCampo} />
-
-          <input type="password" placeholder="Senha"
-            name="senha"
-            value={this.state.senha}
-            onChange={this.atualizaStateCampo} />
-
-          <p style={{ color: 'red' }}>{this.state.erroMensagem}</p>
-
-          {
-            this.state.isLoading === false &&
-            <button disabled={this.state.email === '' || this.state.senha === '' ? 'none' : ''} type="button" class="btn-formL">Login</button>
-          }
-        </form>
-
-        <div class="contaL">
-          <p>Não possui uma conta?</p> <a href="">Cadastre-se.</a>
-        </div>
-        <div class="redirectL">
-          <button>
-            <img src={tel} alt="ícone entrar em contato" />
-            Entre em contato
-          </button>
-          <button>
-            <img src={globo} alt="ícone acesse a darede" />
-            Acesse a Darede
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-}

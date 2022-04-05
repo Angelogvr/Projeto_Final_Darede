@@ -35,6 +35,18 @@ namespace senai.darede.WebAPI
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
                 c.IncludeXmlComments(xmlPath);
             });
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorPolicy",
+                                builder =>
+                                {
+                                    builder.WithOrigins("http://localhost:3000")
+                                    .AllowAnyHeader()
+                                    .AllowAnyMethod();
+                                });
+            });
+
         }
     
 
@@ -54,6 +66,8 @@ namespace senai.darede.WebAPI
             });
 
             app.UseRouting();
+
+            app.UseCors("CorPolicy");
 
             app.UseEndpoints(endpoints =>
             {

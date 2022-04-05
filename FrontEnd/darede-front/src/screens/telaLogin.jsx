@@ -5,10 +5,9 @@ import tel from '../assets/icon-telefone.svg'
 import globo from '../assets/icon-globo.svg'
 import '../style/telaLogin.css'
 
-import axios from 'axios'
+import api from '../services/api'
 import { Component } from 'react';
-
-import telaCadastro from './telaCadastro'
+import { Link } from 'react-router-dom';
 
 
 export default class Login extends Component {
@@ -27,7 +26,7 @@ export default class Login extends Component {
 
     this.setState({ erroMensagem: "", isLoading: true })
 
-    axios.post('http://localhost:5000/api/Logins/login', {
+    api.post('http://localhost:5000/api/Logins/login', {
       email: this.state.email,
       senha: this.state.senha
     })
@@ -36,7 +35,7 @@ export default class Login extends Component {
         if (resposta.status === 200) {
           localStorage.setItem('usuario-login', resposta.data.token);
           this.setState({ isLoading: false });
-            this.props.history.push('/');
+          this.props.history.push('/Cadastro');
         }
       })
       .catch(() => {
@@ -46,6 +45,7 @@ export default class Login extends Component {
 
   atualizaStateCampo = (campo) => {
     this.setState({ [campo.target.name]: campo.target.value })
+    console.log([campo.target.name] + ' : ' + campo.target.value)
   }
 
   render() {
@@ -72,17 +72,17 @@ export default class Login extends Component {
             <p style={{ color: 'red' }}>{this.state.erroMensagem}</p>
 
             {
-                this.state.isLoading === true &&
-                <button type="submit" disabled>Loading...</button>
-              }
-              {
-                this.state.isLoading === false &&
-                <button disabled={this.state.email === '' || this.state.senha === '' ? 'none' : ''} className="btn-formL" type="submit">Login</button>
-              }
+              this.state.isLoading === true &&
+              <button type="submit" disabled>Loading...</button>
+            }
+            {
+              this.state.isLoading === false &&
+              <button disabled={this.state.email === '' || this.state.senha === '' ? 'none' : ''} className="btn-formL" type="submit">Login</button>
+            }
           </form>
 
           <div className="contaL">
-            <p>Não possui uma conta?</p> <a href={telaCadastro}>Cadastre-se.</a>
+            <p>Não possui uma conta?</p> <Link to="/Cadastro">Cadastre-se.</Link>
           </div>
           <div className="redirectL">
             <button>

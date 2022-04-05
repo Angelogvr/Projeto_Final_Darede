@@ -38,12 +38,11 @@ export default class Cadastro extends Component {
         if (resposta.status === 200) {
           localStorage.setItem('usuario-cadastro', resposta.data.token);
           this.setState({ isLoading: false });
-          this.props.history.push('/login');
-          this.setState({ cadastroMensagem: "Cadastro realizado!", isLoading: false });
+          this.props.history.push('/Login');
         }
       })
-    }
-  
+  }
+
 
   atualizaStateCampo = (campo) => {
     this.setState({ [campo.target.name]: campo.target.value })
@@ -91,7 +90,7 @@ export default class Cadastro extends Component {
 
             <button type="submit" className="btn-form">Cadastrar</button>
           </form>
-          
+
           <div className="conta">
             <p>Já possui uma conta?</p> <Link to="/Login">Conecte-se.</Link>
           </div>

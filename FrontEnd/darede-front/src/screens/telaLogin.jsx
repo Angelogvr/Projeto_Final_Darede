@@ -35,7 +35,7 @@ export default class Login extends Component {
         if (resposta.status === 200) {
           localStorage.setItem('usuario-login', resposta.data.token);
           this.setState({ isLoading: false });
-          this.props.history.push('/Cadastro');
+          this.props.history.push('/home');
         }
       })
       .catch(() => {

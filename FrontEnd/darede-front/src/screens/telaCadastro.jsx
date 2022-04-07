@@ -19,6 +19,7 @@ export default class Cadastro extends Component {
       email: '',
       senha: '',
       cadastroMensagem: "",
+      erroMensagem: "",
       idUsuario: 0
     };
   };
@@ -26,7 +27,7 @@ export default class Cadastro extends Component {
   cadastrarUsuario = (event) => {
     event.preventDefault();
 
-    this.setState({ erroMensagem: "", isLoading: true })
+    this.setState({ cadastroMensagem: "", isLoading: true })
 
     api.post('http://localhost:5000/api/Usuarios', {
       nomeUsuario: this.state.nomeUsuario,
@@ -34,12 +35,26 @@ export default class Cadastro extends Component {
       senha: this.state.senha
     })
 
+    // api.post('https://localhost:5000/api/Usuarios', [
+    //   //validação dos dados
+    //   body('username').isEmail(),
+    //   body('password').isLength({ min: 5 })
+    // ], (req, res) => {
+    //   // caso encontre erros, ficará nessa variável errors
+    //   const errors = validationResult(req);
+    //   if (!errors.isEmpty()) {
+    //     return res.status(400).json({ errors: errors.array() });
+    //   }
+
       .then(resposta => {
         if (resposta.status === 200) {
           localStorage.setItem('usuario-cadastro', resposta.data.token);
           this.setState({ isLoading: false });
-          this.props.history.push('/Login');
+          this.props.history.push('/');
         }
+      })
+      .catch(() => {
+        this.setState({ erroMensagem: "Este email já está em uso, tente novamente.", isLoading: false });
       })
   }
 
@@ -86,13 +101,13 @@ export default class Cadastro extends Component {
               value={this.state.senha}
             />
 
-            <p style={{ color: 'green' }}>{this.state.cadastroMensagem}</p>
+            <p style={{ color: 'red' }}>{this.state.erroMensagem}</p>
 
             <button type="submit" className="btn-form">Cadastrar</button>
           </form>
 
           <div className="conta">
-            <p>Já possui uma conta?</p> <Link to="/Login">Conecte-se.</Link>
+            <p>Já possui uma conta?</p> <Link to="/">Conecte-se.</Link>
           </div>
           <div className="redirect">
             <button>

@@ -73,7 +73,7 @@ export default class Login extends Component {
 
             {
               this.state.isLoading === true &&
-              <button type="submit" disabled>Loading...</button>
+              <button type="submit" disabled className="btn-formL">Loading...</button>
             }
             {
               this.state.isLoading === false &&

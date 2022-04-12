@@ -21,7 +21,7 @@ namespace senai.darede.WebAPI.Interfaces
         /// Atualiza um Usuario existente passando o id pela URL da requisição
         /// </summary>
         /// <param name="idUsuario">id do Usuario que será atualizado</param>
-        /// <param name="UsuarioAtualizado">Objeto UsuarioAtualizado com os novos dados</param>
+        /// <param name="usuarioAtualizado">Objeto UsuarioAtualizado com os novos dados</param>
         void Atualizar(int idUsuario, Usuario usuarioAtualizado);
 
         /// <summary>

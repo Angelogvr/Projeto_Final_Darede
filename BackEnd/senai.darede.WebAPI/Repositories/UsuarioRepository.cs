@@ -13,6 +13,11 @@ namespace senai.darede.WebAPI.Repositories
 
         DaredeContext ctx = new DaredeContext();
 
+        public Usuario ListarId(int id)
+        {
+            return ctx.Usuarios.FirstOrDefault(c => c.IdUsuario == id);
+        }
+
         public void Atualizar(int idUsuario, Usuario usuarioAtualizado)
         {
             Usuario usuarioBuscado = ListarId(idUsuario);
@@ -40,11 +45,6 @@ namespace senai.darede.WebAPI.Repositories
             Usuario usuarioBuscado = ListarId(idUsuario);
             ctx.Usuarios.Remove(usuarioBuscado);
             ctx.SaveChanges();
-        }
-
-        public Usuario ListarId(int id)
-        {
-            return ctx.Usuarios.FirstOrDefault(c => c.IdUsuario == id);
         }
 
         public Usuario Login(string email, string senha)

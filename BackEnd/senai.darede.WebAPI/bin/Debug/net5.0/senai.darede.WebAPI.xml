@@ -35,6 +35,43 @@
             </summary>
             <param name="idArmInstancia">ID da Zona deletado</param>
         </member>
+        <member name="T:senai.darede.WebAPI.Interfaces.IInfraestruturaRepository">
+            <summary>
+            Interface responsável pelo repositório Infraestrutura
+            </summary>
+        </member>
+        <member name="M:senai.darede.WebAPI.Interfaces.IInfraestruturaRepository.Cadastrar(senai.darede.WebAPI.Domains.Infraestrutura)">
+            <summary>
+            Cadastra uma nova Infraestrutura
+            </summary>
+            <param name="novaInfraestrutura">Objeto novaInfraestrutura com os novos dados</param>
+        </member>
+        <member name="M:senai.darede.WebAPI.Interfaces.IInfraestruturaRepository.Atualizar(System.Int32,senai.darede.WebAPI.Domains.Infraestrutura)">
+            <summary>
+            Atualiza uma Infraestrutura existente passando o id pela URL da requisição
+            </summary>
+            <param name="idInfraestrutura">id da Infraestrutura que será atualizada</param>
+            <param name="infraestruturaAtualizada">Objeto InfraestruturaAtualizada com os novos dados</param>
+        </member>
+        <member name="M:senai.darede.WebAPI.Interfaces.IInfraestruturaRepository.ListarId(System.Int32)">
+            <summary>
+            Busca uma Infraestrutura através de seu ID
+            </summary>
+            <param name="id">ID do Infraestrutura buscado</param>
+            <returns>A infraestrutura buscada</returns>
+        </member>
+        <member name="M:senai.darede.WebAPI.Interfaces.IInfraestruturaRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta uma Infraestrutura existente
+            </summary>
+            <param name="idInfraestrutura">ID da Infraestrutura deletado</param>
+        </member>
+        <member name="M:senai.darede.WebAPI.Interfaces.IInfraestruturaRepository.MinhasInfraestruturas(System.Int32)">
+            <summary>
+            Lista as Infraestruturas do usuário
+            </summary>
+            <param name="idUsuario">ID do Usuario que terá a infraestruturas listadas</param>
+        </member>
         <member name="T:senai.darede.WebAPI.Interfaces.ISoftwareRepository">
             <summary>
             Interface responsável pelo repositório SoftwareInterface
@@ -166,6 +203,35 @@
             Deleta um Zona existente
             </summary>
             <param name="idZona">ID da Zona deletado</param>
+        </member>
+        <member name="M:Patrimonio.Utils.Upload.UploadFile(Microsoft.AspNetCore.Http.IFormFile,System.String[])">
+            <summary>
+            Faz o upload do arquivo para o servidor
+            </summary>
+            <param name="arquivo">Arquivo vindo de um formulário</param>
+            <param name="extensoesPermitidas">Array com extensões permitidas apenas</param>
+            <returns>Nome do arquivo salvo</returns>
+        </member>
+        <member name="M:Patrimonio.Utils.Upload.ValidarExtensao(System.String[],System.String)">
+            <summary>
+            Valida o uso de enxtensões permitidas apenas
+            </summary>
+            <param name="extensoes">Array de extensões permitidas</param>
+            <param name="nomeDoArquivo">Nome do arquivo</param>
+            <returns>Verdadeiro/Falso</returns>
+        </member>
+        <member name="M:Patrimonio.Utils.Upload.RemoverArquivo(System.String)">
+            <summary>
+            Remove um arquivo do servidor
+            </summary>
+            <param name="nomeDoArquivo">Nome do Arquivo</param>
+        </member>
+        <member name="M:Patrimonio.Utils.Upload.RetornarExtensao(System.String)">
+            <summary>
+            Retorna a extensão de um arquivo
+            </summary>
+            <param name="nomeDoArquivo">Nome do Arquivo</param>
+            <returns>Retorna a extensão de um arquivo</returns>
         </member>
     </members>
 </doc>

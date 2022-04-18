@@ -56,7 +56,7 @@ export default class Login extends Component {
           <img src={banner} className="undrawL" alt="banner cadastro" />
         </div>
         <div className="direitaL">
-          <h1>Login</h1>
+          <h1 className='h1-login'>Login</h1>
           <form action="submit" onSubmit={this.efetuaLogin}>
 
             <input type="email" placeholder="Email"

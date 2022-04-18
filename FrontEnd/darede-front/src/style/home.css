@@ -1,0 +1,35 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.grid{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 45px;
+}
+
+.h1-home {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 45px;
+}
+
+.grid{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.box-list{
+    margin-top: 35px;
+
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+.box-infraestrutura{
+    background-color: #EDEFF2;
+}

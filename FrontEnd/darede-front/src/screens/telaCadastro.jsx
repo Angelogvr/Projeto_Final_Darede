@@ -80,7 +80,7 @@ export default class Cadastro extends Component {
           <img src={banner} className='undraw' alt="banner cadastro" />
         </div>
         <div className="direita">
-          <h1>Cadastro</h1>
+          <h1 className="h1-login">Cadastro</h1>
           <form action="submit" onSubmit={this.cadastrarUsuario}>
 
             <input type="text" placeholder="Nome de Usuário"

@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 
 import telaCadastro from './screens/telaCadastro'
 import telaLogin from './screens/telaLogin'
-import home from './screens/home'
+import home from './screens/homeF'
 import notFound from './screens/notFound'
 
 const routing = (

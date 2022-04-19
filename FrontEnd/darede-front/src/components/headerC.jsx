@@ -8,7 +8,7 @@ import filter from '../assets/icon-filter.svg'
 
 import '../style/header.css'
 
-export default function Header() {
+export default function HeaderC() {
     return (
         <header>
             <div className='header-box'>

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using senai.darede.WebAPI.Domains;
 using senai.darede.WebAPI.Interfaces;
@@ -37,6 +38,7 @@ namespace senai.darede.WebAPI.Contexts
             return Ok(usuarioBuscado);
         }
 
+        [Authorize(Roles = "1")]
         [HttpPost]
         public IActionResult Post(Infraestrutura novaInfraestrutura)
         {

@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-import Header from '../components/headerF'
+import Header from '../components/headerC'
 
 import '../style/home.css'
 

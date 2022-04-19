@@ -6,7 +6,8 @@ import reportWebVitals from './reportWebVitals';
 
 import telaCadastro from './screens/telaCadastro'
 import telaLogin from './screens/telaLogin'
-import home from './screens/homeF'
+import homeF from './screens/homeF'
+import homeC from './screens/homeC'
 import notFound from './screens/notFound'
 
 const routing = (
@@ -15,7 +16,8 @@ const routing = (
       <Switch>
         <Route exact path="/" component={telaLogin} />
         <Route path="/cadastro" component={telaCadastro} /> {/* Cadastro */}
-        <Route path="/home" component={home} /> {/* Home */}
+        <Route path="/homeF" component={homeF} /> {/* Home Funcionário */}
+        <Route path="/homeC" component={homeC} /> {/* Home Cliente */}
         <Route path="/notFound" component={notFound} /> {/* Not Found */}
         <Redirect to="/notFound"/> {/* Redireciona para Not Found caso não encontre nenhuma rota */}
       </Switch>

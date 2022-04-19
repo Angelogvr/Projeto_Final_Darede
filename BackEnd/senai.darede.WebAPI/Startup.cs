@@ -69,6 +69,8 @@ namespace senai.darede.WebAPI
 
             app.UseCors("CorPolicy");
 
+            app.UseAuthorization();
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

@@ -33,6 +33,7 @@ namespace senai.darede.WebAPI.Contexts
             {
 /*#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263. */
                 optionsBuilder.UseSqlServer("Data Source=NOTE0113I3\\SQLEXPRESS; initial catalog=DAREDE_DB; user Id=sa; pwd=Senai@132;");
+                /*"Data Source=sql-g3.c8n23uwvvf9e.us-east-1.rds.amazonaws.com; initial catalog=DAREDE_DB; user Id=admin; pwd=darede-g3;"*/
             }
         }
 

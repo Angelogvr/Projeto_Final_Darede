@@ -14,7 +14,7 @@ export default class Cadastro extends Component {
     super(props)
     this.state = {
       isLoading: false,
-      idTipoUsuario: 0,
+      idTipoUsuario: 1,
       nomeUsuario: '',
       email: '',
       senha: '',
@@ -31,6 +31,7 @@ export default class Cadastro extends Component {
 
     api.post('http://localhost:5000/api/Usuarios', {
       nomeUsuario: this.state.nomeUsuario,
+      idTipoUsuario: this.state.idTipoUsuario,
       email: this.state.email,
       senha: this.state.senha
     })

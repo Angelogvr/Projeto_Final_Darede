@@ -8,6 +8,46 @@ import '../style/home.css'
 import info from '../assets/icon-info.svg'
 import star from '../assets/icon-star.svg'
 
+
+
+function Example() {
+    const [show, setShow] = useState(false);
+  
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+  
+    return (
+      <>
+        <Button variant="primary" onClick={handleShow}>
+          Launch static backdrop modal
+        </Button>
+  
+        <Modal
+          show={show}
+          onHide={handleClose}
+          backdrop="static"
+          keyboard={false}
+        >
+          <Modal.Header closeButton>
+            <Modal.Title>Modal title</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            I will not close if you click outside me. Don't even try to press
+            escape key.
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleClose}>
+              Close
+            </Button>
+            <Button variant="primary">Understood</Button>
+          </Modal.Footer>
+        </Modal>
+      </>
+    );
+  }
+  
+  render(<Example />);
+
 export default class Home extends Component {
     render() {
         return (
@@ -36,29 +76,6 @@ export default class Home extends Component {
                                 <img src={info} alt="icon-info" />
                                 <img src={star} alt="star-info" />
                                 {/* ativo */}
-                            </div>
-                        </div>
-                    </div>
-
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">botao
-                    </button>
-
-                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    ...
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Save changes</button>
-                                </div>
                             </div>
                         </div>
                     </div>

@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-import Header from '../components/headerF'
+import HeaderF from '../components/headerF'
 
 import '../style/home.css'
 
@@ -12,7 +12,7 @@ export default class Home extends Component {
     render() {
         return (
             <div>
-                <Header></Header>
+                <HeaderF></HeaderF>
                 <div className='grid'>
                     <h1 className='h1-home'>Infraestruturas</h1>
                     <div className='box-list'>

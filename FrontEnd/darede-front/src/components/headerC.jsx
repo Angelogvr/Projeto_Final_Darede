@@ -7,6 +7,7 @@ import plus from '../assets/icon-plus.svg'
 import filter from '../assets/icon-filter.svg'
 
 import '../style/header.css'
+import { getByDisplayValue } from '@testing-library/react';
 
 export default function HeaderC() {
     return (

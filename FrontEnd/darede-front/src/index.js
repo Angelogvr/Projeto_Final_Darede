@@ -4,6 +4,8 @@ import { Route, BrowserRouter as Router, Redirect ,Switch } from 'react-router-d
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
+import './style/modal.css'
+
 import telaCadastro from './screens/telaCadastro'
 import telaLogin from './screens/telaLogin'
 import homeF from './screens/homeF'

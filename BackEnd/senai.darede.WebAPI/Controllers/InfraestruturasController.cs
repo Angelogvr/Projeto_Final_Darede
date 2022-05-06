@@ -82,32 +82,20 @@ namespace senai.darede.WebAPI.Contexts
         }
 
         [HttpGet("InfraestruturasUsuario")]
-        public IActionResult MinhasInfraestruturas(int id)
+        public IActionResult MinhasInfraestruturas()
         {
-
-            Infraestrutura infraestruturaBuscada = _InfraestruturaRepository.ListarId(id);
-
-            /*if (infraestruturaBuscada == null)
-            {
-                return NotFound
-                    (new
-                    {
-                        mensagem = "Infraestrutura não encontrada.",
-                        erro = true
-                    });
-            }*/
 
             try
             {
                 int idUsuario = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value);
 
-                return Ok(_InfraestruturaRepository.MinhasInfraestruturas(idUsuario));
+                return Ok(_InfraestruturaRepository.ListarId(idUsuario));
             }
             catch (Exception error)
             {
                 return BadRequest(new
                 {
-                    mensagem = "Não é possível mostrar as Infraestruturas se o usuário não estiver logado!",
+                    mensagem = "Não é possível mostrar as infraestrurtuas se o usuário não estiver logado!",
                     error
                 });
             }

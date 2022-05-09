@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     "net5.0": {
-      "Amazon.JSII.Runtime/1.57.0": {
+      "Amazon.JSII.Runtime/1.58.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection": "6.0.0",
@@ -17,10 +17,10 @@
           "lib/netcoreapp3.1/Amazon.JSII.Runtime.dll": {}
         }
       },
-      "Constructs/10.0.0": {
+      "Constructs/10.1.4": {
         "type": "package",
         "dependencies": {
-          "Amazon.JSII.Runtime": "[1.26.0, 2.0.0)"
+          "Amazon.JSII.Runtime": "[1.58.0, 2.0.0)"
         },
         "compile": {
           "lib/netcoreapp3.1/Constructs.dll": {}
@@ -42,10 +42,10 @@
           "lib/netcoreapp3.1/HashiCorp.Cdktf.dll": {}
         }
       },
-      "HashiCorp.Cdktf.Providers.Aws/7.0.46": {
+      "HashiCorp.Cdktf.Providers.Aws/7.0.49": {
         "type": "package",
         "dependencies": {
-          "Amazon.JSII.Runtime": "[1.57.0, 2.0.0)",
+          "Amazon.JSII.Runtime": "[1.58.0, 2.0.0)",
           "Constructs": "[10.0.0, 11.0.0)",
           "HashiCorp.Cdktf": "[0.10.3, 0.11.0)"
         },
@@ -2423,27 +2423,27 @@
     }
   },
   "libraries": {
-    "Amazon.JSII.Runtime/1.57.0": {
-      "sha512": "+TffWB5iuKtGMQUPnZ+4/wwUwj/AlrOOvsDsOFpZOBDKJ+85aKimzPyutnf/TAkLwNk+gZMK2AXF8PVJX6lvgg==",
+    "Amazon.JSII.Runtime/1.58.0": {
+      "sha512": "tiV2W/XtB8vVWchQ6WfUy/0jZEld+wuAqAXwfBKn8emRViasbo8QrUkeqA6m43kUFR/y3Whm79KyXXxsEY2ODg==",
       "type": "package",
-      "path": "amazon.jsii.runtime/1.57.0",
+      "path": "amazon.jsii.runtime/1.58.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "amazon.jsii.runtime.1.57.0.nupkg.sha512",
+        "amazon.jsii.runtime.1.58.0.nupkg.sha512",
         "amazon.jsii.runtime.nuspec",
         "icon.png",
         "lib/netcoreapp3.1/Amazon.JSII.Runtime.dll"
       ]
     },
-    "Constructs/10.0.0": {
-      "sha512": "mNe6jwWV5hkMtxMVgSvHOYwtCL3WM9u0+jNCKof8roI8to+wMBlXNdqv+syakanH7fKQvuLpWr3X8RRuhpPVNg==",
+    "Constructs/10.1.4": {
+      "sha512": "uSHuWk2DtNYE4ju8jNa0g35bb3bKWYNVqVLpITsP8UpzMf0G0U8fKbjLjLek58rFtSThIsjk5V7QUsZP6sC07A==",
       "type": "package",
-      "path": "constructs/10.0.0",
+      "path": "constructs/10.1.4",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "constructs.10.0.0.nupkg.sha512",
+        "constructs.10.1.4.nupkg.sha512",
         "constructs.nuspec",
         "lib/netcoreapp3.1/Constructs.dll",
         "lib/netcoreapp3.1/Constructs.xml"
@@ -2462,14 +2462,14 @@
         "lib/netcoreapp3.1/HashiCorp.Cdktf.xml"
       ]
     },
-    "HashiCorp.Cdktf.Providers.Aws/7.0.46": {
-      "sha512": "mOUpLw6vuQweO+wq5G7D7cAMlRMBQSLpRsaBWTTS1P+lTWNa7dw9tptkI6bYMN2CB4uLPONa0a+P0qwnkDJB4w==",
+    "HashiCorp.Cdktf.Providers.Aws/7.0.49": {
+      "sha512": "XlMaqDKJc1l4kjzSfTKJXJKm6f/XlQrK/ilTX7Se1xAqbvllmrg/ncnfIqs9v0O1BjPfJuZrbDCnCpDUNPdHBg==",
       "type": "package",
-      "path": "hashicorp.cdktf.providers.aws/7.0.46",
+      "path": "hashicorp.cdktf.providers.aws/7.0.49",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "hashicorp.cdktf.providers.aws.7.0.46.nupkg.sha512",
+        "hashicorp.cdktf.providers.aws.7.0.49.nupkg.sha512",
         "hashicorp.cdktf.providers.aws.nuspec",
         "lib/netcoreapp3.1/HashiCorp.Cdktf.Providers.Aws.dll",
         "lib/netcoreapp3.1/HashiCorp.Cdktf.Providers.Aws.xml"
@@ -8074,7 +8074,8 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
-      "HashiCorp.Cdktf.Providers.Aws >= 7.0.46",
+      "Constructs >= 10.1.4",
+      "HashiCorp.Cdktf.Providers.Aws >= 7.0.49",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 5.0.15",
       "Microsoft.AspNetCore.Mvc.NewtonsoftJson >= 5.0.15",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.15",
@@ -8124,9 +8125,13 @@
       "net5.0": {
         "targetAlias": "net5.0",
         "dependencies": {
+          "Constructs": {
+            "target": "Package",
+            "version": "[10.1.4, )"
+          },
           "HashiCorp.Cdktf.Providers.Aws": {
             "target": "Package",
-            "version": "[7.0.46, )"
+            "version": "[7.0.49, )"
           },
           "Microsoft.AspNetCore.Authentication.JwtBearer": {
             "target": "Package",
@@ -8190,16 +8195,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1605",
-      "level": "Error",
-      "message": "Downgrade de pacote detectado: Constructs de 10.0.25 para 10.0.0. Referencie o pacote diretamente do projeto para selecionar uma versão diferente. \r\n senai.darede.WebAPI -> HashiCorp.Cdktf.Providers.Aws 7.0.46 -> HashiCorp.Cdktf 0.10.3 -> Constructs (>= 10.0.25 && < 11.0.0) \r\n senai.darede.WebAPI -> HashiCorp.Cdktf.Providers.Aws 7.0.46 -> Constructs (>= 10.0.0 && < 11.0.0)",
-      "libraryId": "Constructs",
-      "targetGraphs": [
-        "net5.0"
-      ]
-    }
-  ]
+  }
 }

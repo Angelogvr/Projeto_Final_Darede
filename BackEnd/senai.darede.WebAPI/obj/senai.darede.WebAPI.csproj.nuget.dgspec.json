@@ -40,9 +40,13 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Constructs": {
+              "target": "Package",
+              "version": "[10.1.4, )"
+            },
             "HashiCorp.Cdktf.Providers.Aws": {
               "target": "Package",
-              "version": "[7.0.46, )"
+              "version": "[7.0.49, )"
             },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",

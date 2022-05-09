@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "ZtgJDogwhNQ4FmuqMBRa58qcl4rAvnCPWuMNHh4Zn4N4QeBYdv8DXpeQkww56uI4NrUb2jgAIFx0NDEQFEb5dg==",
-  "success": false,
+  "dgSpecHash": "iLh+MkWa68psmEsPTAUYna8OU8f5mEargF6XHnMBuTUFVeuzRt8vOTqNwNQvf4/StPZ8fFwAPoIwSRw7oe0ueA==",
+  "success": true,
   "projectFilePath": "C:\\Users\\47509398894.INFOSCS\\Desktop\\Darede Project\\BackEnd\\senai.darede.WebAPI\\senai.darede.WebAPI.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\47509398894.INFOSCS\\.nuget\\packages\\amazon.jsii.runtime\\1.57.0\\amazon.jsii.runtime.1.57.0.nupkg.sha512",
-    "C:\\Users\\47509398894.INFOSCS\\.nuget\\packages\\constructs\\10.0.0\\constructs.10.0.0.nupkg.sha512",
+    "C:\\Users\\47509398894.INFOSCS\\.nuget\\packages\\amazon.jsii.runtime\\1.58.0\\amazon.jsii.runtime.1.58.0.nupkg.sha512",
+    "C:\\Users\\47509398894.INFOSCS\\.nuget\\packages\\constructs\\10.1.4\\constructs.10.1.4.nupkg.sha512",
     "C:\\Users\\47509398894.INFOSCS\\.nuget\\packages\\hashicorp.cdktf\\0.10.3\\hashicorp.cdktf.0.10.3.nupkg.sha512",
-    "C:\\Users\\47509398894.INFOSCS\\.nuget\\packages\\hashicorp.cdktf.providers.aws\\7.0.46\\hashicorp.cdktf.providers.aws.7.0.46.nupkg.sha512",
+    "C:\\Users\\47509398894.INFOSCS\\.nuget\\packages\\hashicorp.cdktf.providers.aws\\7.0.49\\hashicorp.cdktf.providers.aws.7.0.49.nupkg.sha512",
     "C:\\Users\\47509398894.INFOSCS\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\47509398894.INFOSCS\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\5.0.15\\microsoft.aspnetcore.authentication.jwtbearer.5.0.15.nupkg.sha512",
     "C:\\Users\\47509398894.INFOSCS\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\5.0.15\\microsoft.aspnetcore.jsonpatch.5.0.15.nupkg.sha512",
@@ -161,15 +161,5 @@
     "C:\\Users\\47509398894.INFOSCS\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
     "C:\\Users\\47509398894.INFOSCS\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.13\\microsoft.netcore.app.host.win-x64.5.0.13.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1605",
-      "level": "Error",
-      "message": "Downgrade de pacote detectado: Constructs de 10.0.25 para 10.0.0. Referencie o pacote diretamente do projeto para selecionar uma versão diferente. \r\n senai.darede.WebAPI -> HashiCorp.Cdktf.Providers.Aws 7.0.46 -> HashiCorp.Cdktf 0.10.3 -> Constructs (>= 10.0.25 && < 11.0.0) \r\n senai.darede.WebAPI -> HashiCorp.Cdktf.Providers.Aws 7.0.46 -> Constructs (>= 10.0.0 && < 11.0.0)",
-      "libraryId": "Constructs",
-      "targetGraphs": [
-        "net5.0"
-      ]
-    }
-  ]
+  "logs": []
 }

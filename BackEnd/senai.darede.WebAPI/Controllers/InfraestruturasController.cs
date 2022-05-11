@@ -38,7 +38,7 @@ namespace senai.darede.WebAPI.Contexts
             return Ok(usuarioBuscado);
         }
 
-        [Authorize(Roles = "1")]
+        //[Authorize(Roles = "1")]
         [HttpPost]
         public IActionResult Post(Infraestrutura novaInfraestrutura)
         {

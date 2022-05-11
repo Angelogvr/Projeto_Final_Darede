@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Route, BrowserRouter as Router, Redirect ,Switch } from 'react-router-dom';
+import { parseJWT, usuarioAutenticacao } from './services/auth';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
@@ -11,6 +12,30 @@ import telaLogin from './screens/telaLogin'
 import homeF from './screens/homeF'
 import homeC from './screens/homeC'
 import notFound from './screens/notFound'
+
+const PermissaoF = ({ component: Component }) => (
+  <Route
+    render={(props) =>
+      usuarioAutenticacao() && parseJWT().role === '1' ? (
+        <Component {...props} />
+      ) : (
+        <Redirect to="homeC" />
+      )
+    }
+  />
+);
+
+const PermissaoC = ({ component: Component }) => (
+  <Route
+    render={(props) =>
+      usuarioAutenticacao() && parseJWT().role === '2' ? (
+        <Component {...props} />
+      ) : (
+        <Redirect to="homeF" />
+      )
+    }
+  />
+);
 
 const routing = (
   <Router>

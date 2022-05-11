@@ -8,6 +8,7 @@ import '../style/telaLogin.css'
 import api from '../services/api'
 import { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { parseJWT, usuarioAutenticacao } from '../services/auth';
 
 
 export default class Login extends Component {
@@ -35,7 +36,22 @@ export default class Login extends Component {
         if (resposta.status === 200) {
           localStorage.setItem('usuario-login', resposta.data.token);
           this.setState({ isLoading: false });
-          this.props.history.push('/homef');
+
+          switch (parseJWT().role) {
+            case "1":
+              this.props.history.push("/homeC")
+              console.log("estou logado: " + usuarioAutenticacao())
+              break;
+
+            case "2":
+              this.props.history.push("/homeF")
+              console.log("estou logado: " + usuarioAutenticacao())
+              break;
+
+            default:
+              this.props.history.push("/notFound")
+              break;
+          }
         }
       })
       .catch(() => {

@@ -34,8 +34,8 @@ function HomeF() {
                             </button>
                             {/* ativo */}
                         </div>
-                        {isModalVisible ?
-                            <Modal>
+                        {isModalVisible ? (
+                            <Modal onClose={ ()=> setIsModalVisible(false)}>
                                 <div className="info-modal">
                                     <h1>Informações da Infraestrutura</h1>
                                     <div className="info-box">
@@ -59,7 +59,7 @@ function HomeF() {
                                         </div>
                                     </div>
                                 </div>
-                            </Modal> : null}
+                            </Modal>) : null}
                     </div>
                     <div className='box-infraestrutura'>
                         <div className='content-infraestrutura'>

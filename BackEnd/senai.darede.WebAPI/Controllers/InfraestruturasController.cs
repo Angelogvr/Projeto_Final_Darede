@@ -6,6 +6,7 @@ using senai.darede.WebAPI.Interfaces;
 using senai.darede.WebAPI.Repositories;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Threading.Tasks;
@@ -17,6 +18,12 @@ namespace senai.darede.WebAPI.Contexts
     [ApiController]
     public class InfraestruturasController : ControllerBase
     {
+        [HttpPost]
+        static void Main(string[] args)
+        {
+            string command = "/C notepad.exe";
+            Process.Start("cmd.exe", 'dotnet build');
+        }
 
         private IInfraestruturaRepository _InfraestruturaRepository { get; set; }
 

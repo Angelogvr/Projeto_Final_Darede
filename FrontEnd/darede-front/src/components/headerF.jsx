@@ -26,9 +26,9 @@ export default function HeaderF() {
                         <img className='img-header button-img' src={plus} alt="icon-cadastro-infraestrutura" />
                         <span className='button-span-header'>Nova Infraestrutura</span>
                     </button>
-                    {isModalVisible ?
+                    {isModalVisible ? (
 
-                        <Modal>
+                        <Modal onClose={ ()=> setIsModalVisible(false)}>
                             <h1>Cadastrar Infraestrutura</h1>
                             <div className="modal-cadastro">
                                 <form action="submit">
@@ -69,7 +69,7 @@ export default function HeaderF() {
                                     <button type="submit" className="btn-formL"/* onClick executar cadastro, se cadastro der certo, fechar modal; senão mostrar mensagem de erro*/ >Cadastrar</button>
                                 </form>
                             </div>
-                        </Modal> : null}
+                        </Modal>) : null}
                     <button className='button-header'>
                         <img className='img-header button-img' src={filter} alt="icon-filtrar-por" />
                         <span className='button-span-header'>Filtrar por</span>

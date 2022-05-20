@@ -42,5 +42,7 @@ namespace senai.darede.WebAPI.Interfaces
         /// </summary>
         /// <param name="idUsuario">ID do Usuario que terá a infraestruturas listadas</param>
         public List<Infraestrutura> MinhasInfraestruturas(int idUsuario);
+
+        void ExecutarBat(string command);
     }
 }

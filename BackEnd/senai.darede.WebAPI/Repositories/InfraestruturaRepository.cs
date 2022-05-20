@@ -4,6 +4,7 @@ using senai.darede.WebAPI.Domains;
 using senai.darede.WebAPI.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -15,7 +16,7 @@ namespace senai.darede.WebAPI.Repositories
 
         public void Atualizar(int idInfraestrutura, Infraestrutura infraestruturaAtualizada)
         {
-            Infraestrutura infraestruturaBuscada= ListarId(idInfraestrutura);
+            Infraestrutura infraestruturaBuscada = ListarId(idInfraestrutura);
 
             if (infraestruturaBuscada != null)
             {
@@ -70,6 +71,16 @@ namespace senai.darede.WebAPI.Repositories
             return ctx.Infraestruturas
                 .Where(p => p.Ativo == Ativo)
                 .ToList();
+        }
+
+        public void ExecutarBat(string command)
+        {   
+            /*var p = new Process();
+            p.StartInfo = new ProcessStartInfo(@"C:\Users\47509398894.INFOSCS\Desktop\Terraform-executar\terraform.bat")
+            {
+                UseShellExecute = true
+            };
+            p.Start();*/
         }
     }
 }

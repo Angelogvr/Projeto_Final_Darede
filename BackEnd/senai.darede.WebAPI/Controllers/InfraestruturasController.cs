@@ -7,6 +7,7 @@ using senai.darede.WebAPI.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.ComponentModel;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Threading.Tasks;
@@ -18,13 +19,6 @@ namespace senai.darede.WebAPI.Contexts
     [ApiController]
     public class InfraestruturasController : ControllerBase
     {
-        [HttpPost]
-        static void Main(string[] args)
-        {
-            string command = "/C notepad.exe";
-            Process.Start("cmd.exe", 'dotnet build');
-        }
-
         private IInfraestruturaRepository _InfraestruturaRepository { get; set; }
 
         public InfraestruturasController()
@@ -89,7 +83,7 @@ namespace senai.darede.WebAPI.Contexts
         }
 
         [HttpGet("InfraestruturasUsuario")]
-        public IActionResult MinhasInfraestruturas()
+        public IActionResult GetById()
         {
 
             try
@@ -126,5 +120,11 @@ namespace senai.darede.WebAPI.Contexts
             
         }*/
 
+        [HttpGet("RodarBat")]
+        public IActionResult GetAction()
+        {
+            _InfraestruturaRepository.ExecutarBat("");
+            return StatusCode(200); 
+        }
     }
 }

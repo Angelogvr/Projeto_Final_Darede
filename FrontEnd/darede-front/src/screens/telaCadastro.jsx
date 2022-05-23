@@ -48,9 +48,10 @@ export default class Cadastro extends Component {
     //   }
 
       .then(resposta => {
-        if (resposta.status === 200) {
+        if (resposta.status === 201) {
           localStorage.setItem('usuario-cadastro', resposta.data.token);
           this.setState({ isLoading: false });
+          this.setState({ cadastroMensagem: "Cadastro Realizado!"})
           this.props.history.push('/');
         }
       })
@@ -103,6 +104,7 @@ export default class Cadastro extends Component {
             />
 
             <p style={{ color: 'red' }}>{this.state.erroMensagem}</p>
+            <p style={{ color: 'green'}}>{this.state.cadastroMensagem}</p>
 
             <button type="submit" className="btn-form">Cadastrar</button>
           </form>

@@ -18,15 +18,15 @@ export default class HeaderF extends Component {
     constructor(props) {
         super(props)
         this.state = {
-          isLoading: false,
-          isModalVisible: false,
+            isLoading: false,
+            isModalVisible: false,
         };
-      };
+    };
 
     RodarBat = (event) => {
         event.preventDefault();
 
-        this.setState({isLoading: true })
+        this.setState({ isLoading: true })
 
         api.get('http://localhost:5000/api/Infraestruturas/RodarBat')
 
@@ -49,13 +49,13 @@ export default class HeaderF extends Component {
                         <img className='logo-header' src={logo} alt="logo-darede" />
                     </div>
                     <div className='box-esquerda-header'>
-                        <button className='button-header' onClick={() => this.setState({isModalVisible:true})}>
+                        <button className='button-header' onClick={() => this.setState({ isModalVisible: true })}>
                             <img className='img-header button-img' src={plus} alt="icon-cadastro-infraestrutura" />
                             <span className='button-span-header'>Nova Infraestrutura</span>
                         </button>
                         {this.state.isModalVisible ? (
 
-                            <Modal onClose={() => this.setState({isModalVisible:false})}>
+                            <Modal onClose={() => this.setState({ isModalVisible: false })}>
                                 <h1>Cadastrar Infraestrutura</h1>
                                 <div className="modal-cadastro">
                                     <form action="submit">
@@ -66,21 +66,21 @@ export default class HeaderF extends Component {
                                             <input type="email" placeholder="Email" />
                                         </div>
 
-                                        <h2>Informações do Servidor</h2>
+                                        <h2>EC2</h2>
                                         <div className="input-group input-group2">
                                             <div className="input-group-column">
-                                                <input type="text" placeholder="Memória" />
-                                                <input type="text" placeholder="Armazenamento" />
-                                                <input type="text" placeholder="Processador" />
+                                                <input type="text" placeholder="Zona de Disponibilidade" />
+                                                <input type="text" placeholder="Sistema Operacional" />
+                                                {/* <input type="text" placeholder="Tipo de Instância" /> */}
                                             </div>
                                             <div className="input-group-column">
-                                                <input type="text" placeholder="Sistema Operacional" />
+                                                {/* <input type="text" placeholder="Sistema Operacional" /> */}
                                                 <input type="text" placeholder="Tipo de Instância" />
-                                                <input type="text" placeholder="CPU" />
+                                                {/* <input type="text" placeholder="CPU" /> */}
                                             </div>
                                         </div>
 
-                                        <h2>Informações de Rede</h2>
+                                        <h2>VPC</h2>
                                         <div className="input-group input-group2">
                                             <div className="input-group-column">
                                                 <input type="text" placeholder="Ip Privado" />

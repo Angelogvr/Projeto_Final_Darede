@@ -20,23 +20,25 @@ namespace senai.darede.WebAPI.Contexts
     public class InfraestruturasController : ControllerBase
     {
         private IInfraestruturaRepository _InfraestruturaRepository { get; set; }
+        private IUsuarioRepository _UsuarioRepository { get; set; }
 
         public InfraestruturasController()
         {
             _InfraestruturaRepository = new InfraestruturaRepository();
+            _UsuarioRepository = new UsuarioRepository();
         }
 
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
-            Infraestrutura usuarioBuscado = _InfraestruturaRepository.ListarId(id);
+            Infraestrutura infraestruturaBuscada = _InfraestruturaRepository.ListarId(id);
 
-            if (usuarioBuscado == null)
+            if (infraestruturaBuscada == null)
             {
                 return NotFound("Nenhuma Infraestrutura encontrada.");
             }
 
-            return Ok(usuarioBuscado);
+            return Ok(infraestruturaBuscada);
         }
 
         //[Authorize(Roles = "1")]
@@ -82,15 +84,16 @@ namespace senai.darede.WebAPI.Contexts
             }
         }
 
-        [HttpGet("InfraestruturasUsuario")]
-        public IActionResult GetById()
+        [HttpGet("InfraestruturasUsuario")] //[[[[[NAO FUNCIONAL]]]]]
+        public IActionResult UserI(int id)
         {
+            Usuario usuarioBuscado = _UsuarioRepository.ListarId(id);
 
             try
             {
                 int idUsuario = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value);
 
-                return Ok(_InfraestruturaRepository.ListarId(idUsuario));
+                return Ok(_InfraestruturaRepository.MinhasInfraestruturas(id));
             }
             catch (Exception error)
             {

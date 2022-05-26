@@ -20,8 +20,42 @@ export default class HeaderF extends Component {
         this.state = {
             isLoading: false,
             isModalVisible: false,
+            nomeUsuario: '',
+            email: '',
+            idZona: 'us-east-1',
+            idInstancia: '',
+            idSoftware: ''
         };
     };
+
+    CadastroInfra = (event) => {
+        event.preventDefault();
+
+        this.setState({ isLoading: true })
+
+        api.get('http://localhost:5000/api/Infraestruturas', {
+            nomeUsuario: this.state.nomeUsuario,
+            email: this.state.email,
+            idInstancia: this.state.idInstancia,
+            idSoftware: this.state.idSoftware,
+        })
+
+        .then(resposta => {
+            if(resposta.status === 201) {
+                this.setState({ isLoading: false });
+                alert('Cadastro Realizado')
+                this.props.history.push('/homeF')
+            }
+        })
+        .catch(() => {
+            this.setState({ erroMensagem: "erro", isLoading: false });
+          })
+    }
+
+    atualizaStateCampo = (campo) => {
+        this.setState({ [campo.target.name]: campo.target.value })
+        console.log([campo.target.name] + ' : ' + campo.target.value)
+      }
 
     RodarBat = (event) => {
         event.preventDefault();
@@ -34,7 +68,7 @@ export default class HeaderF extends Component {
                 if (resposta.status === 200) {
                     this.setState({ isLoading: false });
                     // this.props.history.push('/homeF');
-                    alert("cu")
+                    // alert("cu")
                 }
             })
             .catch(() => {
@@ -58,29 +92,48 @@ export default class HeaderF extends Component {
                             <Modal onClose={() => this.setState({ isModalVisible: false })}>
                                 <h1>Cadastrar Infraestrutura</h1>
                                 <div className="modal-cadastro">
-                                    <form action="submit">
+                                    <form action="submit" onSubmit={this.CadastroInfra}>
 
                                         <h2>Informações do Cliente</h2>
                                         <div className="input-group input-group1">
-                                            <input type="text" placeholder="Nome do Cliente" />
-                                            <input type="email" placeholder="Email" />
+                                            <input type="text" placeholder="Nome do Cliente" 
+                                            name='nomeUsuario'
+                                            onChange={this.atualizaStateCampo}
+                                            value={this.state.nomeUsuario}/>
+
+                                            <input type="email" placeholder="Email"
+                                            name='email' 
+                                            onChange={this.atualizaStateCampo}
+                                            value={this.state.email}/>
                                         </div>
 
                                         <h2>EC2</h2>
                                         <div className="input-group input-group2">
                                             <div className="input-group-column">
-                                                <input type="text" placeholder="Zona de Disponibilidade" />
-                                                <input type="text" placeholder="Sistema Operacional" />
+                                                <input type="text" placeholder="Zona de Disponibilidade" 
+                                                name='idZona'
+                                                onChange={this.atualizaStateCampo}
+                                                value={this.state.idZona}/>
+
+                                                <input type="text" placeholder="Sistema Operacional" 
+                                                name='idSoftware'
+                                                onChange={this.atualizaStateCampo}
+                                                value={this.state.idSoftware}/>
+
                                                 {/* <input type="text" placeholder="Tipo de Instância" /> */}
                                             </div>
                                             <div className="input-group-column">
                                                 {/* <input type="text" placeholder="Sistema Operacional" /> */}
-                                                <input type="text" placeholder="Tipo de Instância" />
+                                                <input type="text" placeholder="Tipo de Instância" 
+                                                name='idInstancia'
+                                                onChange={this.atualizaStateCampo}
+                                                value={this.state.idInstancia}/>
+
                                                 {/* <input type="text" placeholder="CPU" /> */}
                                             </div>
                                         </div>
 
-                                        <h2>VPC</h2>
+                                        {/* <h2>VPC</h2>
                                         <div className="input-group input-group2">
                                             <div className="input-group-column">
                                                 <input type="text" placeholder="Ip Privado" />
@@ -92,7 +145,7 @@ export default class HeaderF extends Component {
                                                 <input type="text" placeholder="Máscara" />
                                                 <input type="text" placeholder="Zona de Disponibilidade" />
                                             </div>
-                                        </div>
+                                        </div> */}
                                         <button type="submit" className="btn-formL" onClick={(e) => this.RodarBat(e)}/* onClick executar cadastro, se cadastro der certo, fechar modal; senão mostrar mensagem de erro*/ >Cadastrar</button>
                                     </form>
                                 </div>

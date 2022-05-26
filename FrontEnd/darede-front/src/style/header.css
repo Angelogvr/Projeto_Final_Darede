@@ -39,6 +39,7 @@ header{
 .button-img{
     height: 45px;
     width: 45px;
+    margin-left: 5px;
 }
 
 .button-header{
@@ -55,6 +56,8 @@ header{
 .button-span-header{
     font-family: 'Open Sans', sans-serif;
     color: black;
+    font-size: 14px;
+    line-height: 16px;
 }
 
 .icon-perfil{

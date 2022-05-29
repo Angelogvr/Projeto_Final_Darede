@@ -41,7 +41,8 @@ namespace senai.darede.WebAPI
                 options.AddPolicy("CorPolicy",
                                 builder =>
                                 {
-                                    builder.WithOrigins("http://localhost:3000")
+                                   builder
+                                    .AllowAnyOrigin()
                                     .AllowAnyHeader()
                                     .AllowAnyMethod();
                                 });
@@ -68,6 +69,8 @@ namespace senai.darede.WebAPI
             app.UseRouting();
 
             app.UseCors("CorPolicy");
+
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

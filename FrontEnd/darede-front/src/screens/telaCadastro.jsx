@@ -14,11 +14,12 @@ export default class Cadastro extends Component {
     super(props)
     this.state = {
       isLoading: false,
-      idTipoUsuario: 0,
+      idTipoUsuario: 1,
       nomeUsuario: '',
       email: '',
       senha: '',
       cadastroMensagem: "",
+      erroMensagem: "",
       idUsuario: 0
     };
   };
@@ -26,20 +27,36 @@ export default class Cadastro extends Component {
   cadastrarUsuario = (event) => {
     event.preventDefault();
 
-    this.setState({ erroMensagem: "", isLoading: true })
+    this.setState({ cadastroMensagem: "", isLoading: true })
 
     api.post('http://localhost:5000/api/Usuarios', {
       nomeUsuario: this.state.nomeUsuario,
+      idTipoUsuario: this.state.idTipoUsuario,
       email: this.state.email,
       senha: this.state.senha
     })
 
+    // api.post('https://localhost:5000/api/Usuarios', [
+    //   //validação dos dados
+    //   body('username').isEmail(),
+    //   body('password').isLength({ min: 5 })
+    // ], (req, res) => {
+    //   // caso encontre erros, ficará nessa variável errors
+    //   const errors = validationResult(req);
+    //   if (!errors.isEmpty()) {
+    //     return res.status(400).json({ errors: errors.array() });
+    //   }
+
       .then(resposta => {
-        if (resposta.status === 200) {
+        if (resposta.status === 201) {
           localStorage.setItem('usuario-cadastro', resposta.data.token);
           this.setState({ isLoading: false });
-          this.props.history.push('/Login');
+          this.setState({ cadastroMensagem: "Cadastro Realizado!"})
+          this.props.history.push('/');
         }
+      })
+      .catch(() => {
+        this.setState({ erroMensagem: "Este email já está em uso, tente novamente.", isLoading: false });
       })
   }
 
@@ -65,7 +82,7 @@ export default class Cadastro extends Component {
           <img src={banner} className='undraw' alt="banner cadastro" />
         </div>
         <div className="direita">
-          <h1>Cadastro</h1>
+          <h1 className="h1-login">Cadastro</h1>
           <form action="submit" onSubmit={this.cadastrarUsuario}>
 
             <input type="text" placeholder="Nome de Usuário"
@@ -86,13 +103,14 @@ export default class Cadastro extends Component {
               value={this.state.senha}
             />
 
-            <p style={{ color: 'green' }}>{this.state.cadastroMensagem}</p>
+            <p style={{ color: 'red' }}>{this.state.erroMensagem}</p>
+            <p style={{ color: 'green'}}>{this.state.cadastroMensagem}</p>
 
             <button type="submit" className="btn-form">Cadastrar</button>
           </form>
 
           <div className="conta">
-            <p>Já possui uma conta?</p> <Link to="/Login">Conecte-se.</Link>
+            <p>Já possui uma conta?</p> <Link to="/">Conecte-se.</Link>
           </div>
           <div className="redirect">
             <button>

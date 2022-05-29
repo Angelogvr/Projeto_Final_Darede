@@ -8,6 +8,7 @@ import '../style/telaLogin.css'
 import api from '../services/api'
 import { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { parseJWT, usuarioAutenticacao } from '../services/auth';
 
 
 export default class Login extends Component {
@@ -35,7 +36,22 @@ export default class Login extends Component {
         if (resposta.status === 200) {
           localStorage.setItem('usuario-login', resposta.data.token);
           this.setState({ isLoading: false });
-          this.props.history.push('/home');
+
+          switch (parseJWT().role) {
+            case "1":
+              this.props.history.push("/homeC")
+              console.log("estou logado: " + usuarioAutenticacao())
+              break;
+
+            case "2":
+              this.props.history.push("/homeF")
+              console.log("estou logado: " + usuarioAutenticacao())
+              break;
+
+            default:
+              this.props.history.push("/homeF") //alterar a coisinha aqui
+              break;
+          }
         }
       })
       .catch(() => {
@@ -56,7 +72,7 @@ export default class Login extends Component {
           <img src={banner} className="undrawL" alt="banner cadastro" />
         </div>
         <div className="direitaL">
-          <h1>Login</h1>
+          <h1 className='h1-login'>Login</h1>
           <form action="submit" onSubmit={this.efetuaLogin}>
 
             <input type="email" placeholder="Email"
@@ -73,7 +89,7 @@ export default class Login extends Component {
 
             {
               this.state.isLoading === true &&
-              <button type="submit" disabled>Loading...</button>
+              <button type="submit" disabled className="btn-formL">Loading...</button>
             }
             {
               this.state.isLoading === false &&

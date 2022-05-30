@@ -12,7 +12,7 @@ SELECT * FROM infraestrutura
 
 --Lista todas as informações de uma infraestrutura
 SELECT 
-idInfraestrutura, nomeUsuario[Cliente], ti.nomeTipoInstancia[Tipo de Instância], ai.tipoArmInstancia[Armazenamento da Instância], vCPU, memoriaGIB[Memória GIB], s.nomeSoftware[Software], z.nomeZona [Zona], topologiaImagem[Topologia], ipPrivado+mascaraPrivado[Ip Privado], ipPublico+mascaraPublico[Ip Público], gateway+mascaraGateway[Gateway], ativo[Ativo]
+idInfraestrutura, nomeUsuario[Cliente], ti.nomeTipoInstancia[Tipo de Instância], ai.tipoArmInstancia[Armazenamento da Instância], vCPU, memoriaGIB[Memória GIB], s.nomeSoftware[Software], z.nomeZona [Zona]
 FROM infraestrutura i
 
 LEFT JOIN usuario u

@@ -24,14 +24,9 @@ namespace senai.darede.WebAPI.Repositories
                 infraestruturaBuscada.IdUsuario = infraestruturaAtualizada.IdUsuario;
                 infraestruturaBuscada.IdInstancia = infraestruturaAtualizada.IdInstancia;
                 infraestruturaBuscada.IdSoftware = infraestruturaAtualizada.IdSoftware;
-                infraestruturaBuscada.TopologiaImagem = infraestruturaAtualizada.TopologiaImagem;
                 infraestruturaBuscada.IpPrivado = infraestruturaAtualizada.IpPrivado;
-                infraestruturaBuscada.MascaraPrivado = infraestruturaAtualizada.MascaraPrivado;
                 infraestruturaBuscada.IpPublico = infraestruturaAtualizada.IpPublico;
-                infraestruturaBuscada.MascaraPublico = infraestruturaAtualizada.MascaraPublico;
-                infraestruturaBuscada.Gateway = infraestruturaAtualizada.Gateway;
-                infraestruturaBuscada.MascaraGateway = infraestruturaAtualizada.MascaraGateway;
-                infraestruturaBuscada.Ativo = infraestruturaAtualizada.Ativo;
+
             }
 
             ctx.Infraestruturas.Update(infraestruturaBuscada);
@@ -66,15 +61,8 @@ namespace senai.darede.WebAPI.Repositories
                 .ToList();
         }
 
-        public List<Infraestrutura> InfraestruturasAtivo(bool Ativo)
-        {
-            return ctx.Infraestruturas
-                .Where(p => p.Ativo == Ativo)
-                .ToList();
-        }
-
         public void ExecutarBat(string command)
-        {   
+        {
             /*var p = new Process();
             p.StartInfo = new ProcessStartInfo(@"C:\Users\47509398894.INFOSCS\Desktop\Terraform-executar\terraform.bat")
             {

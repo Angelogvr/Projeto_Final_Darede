@@ -43,16 +43,14 @@ export default class HeaderF extends Component {
             idSoftware: this.state.idSoftware,
             ipPrivado: this.state.ipPrivado,
             ipPublico: this.state.ipPublico,
-
         })
 
         .then(resposta => {
-            if(resposta.status === 201) {
+            if(resposta.status === 200) {
                 localStorage.setItem('usuario-cadastro', resposta.data.token);
                 this.setState({ isLoading: false });
                 alert('Cadastro Realizado');
-                console.log('cadastrado');
-                this.props.history.push('/homeF')
+                // this.props.history.push('/homeF')
             }
         })
         .catch(() => {
@@ -78,7 +76,7 @@ export default class HeaderF extends Component {
                 if (resposta.status === 200) {
                     this.setState({ isLoading: false });
                     // this.props.history.push('/homeF');
-                    // alert("cu")
+                    alert("cu")
                 }
             })
             .catch(() => {
@@ -102,7 +100,7 @@ export default class HeaderF extends Component {
                             <Modal onClose={() => this.setState({ isModalVisible: false })}>
                                 <h1>Cadastrar Infraestrutura</h1>
                                 <div className="modal-cadastro">
-                                    <form action="submit" onSubmit={this.CadastroInfra}>
+                                    <form action="submit" onSubmit={(event) => this.CadastroInfra(event)}>
 
                                         {/* <h2>Informações do Cliente</h2>
                                         <div className="input-group input-group1">
@@ -156,7 +154,7 @@ export default class HeaderF extends Component {
                                                 <input type="text" placeholder="Zona de Disponibilidade" />
                                             </div>
                                         </div> */}
-                                        <button type="submit" className="btn-formL" onClick={(e) => this.RodarBat(e)}/* onClick executar cadastro, se cadastro der certo, fechar modal; senão mostrar mensagem de erro*/ >Cadastrar</button>
+                                        <button type="submit" className="btn-formL" /* onClick executar cadastro, se cadastro der certo, fechar modal; senão mostrar mensagem de erro*/ >Cadastrar</button>
                                     </form>
                                 </div>
                             </Modal>) : null}

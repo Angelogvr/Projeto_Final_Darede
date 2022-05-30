@@ -100,7 +100,7 @@ export default class HeaderF extends Component {
                             <Modal onClose={() => this.setState({ isModalVisible: false })}>
                                 <h1>Cadastrar Infraestrutura</h1>
                                 <div className="modal-cadastro">
-                                    <form action="submit" onSubmit={(event) => this.CadastroInfra(event)}>
+                                    <form action="submit" onSubmit={(event) => this.CadastroInfra(event)}> {/* erro 500 */}
 
                                         {/* <h2>Informações do Cliente</h2>
                                         <div className="input-group input-group1">

@@ -22,7 +22,7 @@ GO
 
 INSERT INTO zona(nomeZona)
 VALUES
-	('us-east-2'),
+	('us-east-1'),
 	('us-west-1')
 GO
 

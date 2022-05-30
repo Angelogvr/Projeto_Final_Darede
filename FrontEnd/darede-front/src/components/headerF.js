@@ -20,21 +20,13 @@ export default class HeaderF extends Component {
         this.state = {
             isLoading: false,
             isModalVisible: false,
-            nomeUsuario: '',
-            email: '',
             idInfraestrutura: '',
             idUsuario: '1',
             idZona: '1',
             idInstancia: '1',
             idSoftware: '1',
-            topologiaImagem: 'd',
-            ipPrivado: 'd',
-            mascaraPrivado: 'd',
-            ipPublico: 'd',
-            mascaraPublico: 'd',
-            gateway: 'd',
-            mascaraGateway: 'd',
-            ativo: 'true'
+            ipPrivado: '1xx.xxx.xxx.xxx',
+            ipPublico: '1xx.xxx.xxx.xxx',
         };
     };
 
@@ -49,25 +41,24 @@ export default class HeaderF extends Component {
             idZona: this.state.idZona,
             idInstancia: this.state.idInstancia,
             idSoftware: this.state.idSoftware,
-            topologiaImagem: this.state.topologiaImagem,
             ipPrivado: this.state.ipPrivado,
-            mascaraPrivado: this.state.mascaraPrivado,
             ipPublico: this.state.ipPublico,
-            mascaraPublico: this.state.mascaraPublico,
 
         })
 
         .then(resposta => {
             if(resposta.status === 201) {
+                localStorage.setItem('usuario-cadastro', resposta.data.token);
                 this.setState({ isLoading: false });
-                alert('Cadastro Realizado')
-                console.log('cadastrado')
+                alert('Cadastro Realizado');
+                console.log('cadastrado');
                 this.props.history.push('/homeF')
             }
         })
         .catch(() => {
             this.setState({ erroMensagem: "erro", isLoading: false });
-            console.log('erro')
+            console.log('erro');
+            alert('erro')
           })
     }
 
@@ -113,7 +104,7 @@ export default class HeaderF extends Component {
                                 <div className="modal-cadastro">
                                     <form action="submit" onSubmit={this.CadastroInfra}>
 
-                                        <h2>Informações do Cliente</h2>
+                                        {/* <h2>Informações do Cliente</h2>
                                         <div className="input-group input-group1">
                                             <input type="text" placeholder="Nome do Cliente" 
                                             name='nomeUsuario'
@@ -124,7 +115,7 @@ export default class HeaderF extends Component {
                                             name='email' 
                                             onChange={this.atualizaStateCampo}
                                             value={this.state.email}/>
-                                        </div>
+                                        </div> */}
 
                                         <h2>EC2</h2>
                                         <div className="input-group input-group2">

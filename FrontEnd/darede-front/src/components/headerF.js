@@ -22,11 +22,11 @@ export default class HeaderF extends Component {
             isModalVisible: false,
             idInfraestrutura: '',
             idUsuario: '1',
-            idZona: '1',
-            idInstancia: '1',
-            idSoftware: '1',
-            ipPrivado: '1xx.xxx.xxx.xxx',
-            ipPublico: '1xx.xxx.xxx.xxx',
+            idZona: '',
+            idInstancia: '',
+            idSoftware: '',
+            ipPrivado: 'susaidbusabd',
+            ipPublico: 'sadjkbajshd b',
         };
     };
 
@@ -35,42 +35,46 @@ export default class HeaderF extends Component {
 
         this.setState({ isLoading: true })
 
-        api.post('http://localhost:5000/api/Infraestruturas', {
-            idInfraestrutura: this.state.idInfraestrutura,
-            idUsuario: this.state.idUsuario,
-            idZona: this.state.idZona,
-            idInstancia: this.state.idInstancia,
-            idSoftware: this.state.idSoftware,
-            ipPrivado: this.state.ipPrivado,
-            ipPublico: this.state.ipPublico,
-        })
+        const Infraestrutura = {
+            "idUsuario": 1,
+            "idInstancia": this.state.idInstancia,
+            "idSoftware": this.state.idSoftware,
+            "idZona": this.state.idZona,
+            "ipPrivado": this.state.ipPrivado,
+            "ipPublico": this.state.ipPublico,
+            // "idInstanciaNavigation": null,
+            // "idSoftwareNavigation": null,
+            // "idUsuarioNavigation": null,
+            // "idZonaNavigation": null
+        }
 
-        .then(resposta => {
-            if(resposta.status === 200) {
-                localStorage.setItem('usuario-cadastro', resposta.data.token);
-                this.setState({ isLoading: false });
-                alert('Cadastro Realizado');
-                // this.props.history.push('/homeF')
-            }
-        })
-        .catch(() => {
-            this.setState({ erroMensagem: "erro", isLoading: false });
-            console.log('erro');
-            alert('erro')
-          })
+        axios.post('http://localhost:5000/api/Infraestruturas', Infraestrutura)
+
+            .then(resposta => {
+                if (resposta.status === 201) {
+                    localStorage.setItem('usuario-cadastro', resposta.data.token);
+                    this.setState({ isLoading: false });
+                    alert('Cadastro Realizado');
+                    // this.props.history.push('/homeF')
+                }
+            })
+            .catch((e) => {
+                this.setState({ erroMensagem: "Não foi possível criar, tente novamente.", isLoading: false });
+                console.log(e);
+            })
     }
 
     atualizaStateCampo = (campo) => {
         this.setState({ [campo.target.name]: campo.target.value })
         console.log([campo.target.name] + ' : ' + campo.target.value)
-      }
+    }
 
     RodarBat = (event) => {
         event.preventDefault();
 
         this.setState({ isLoading: true })
 
-        api.get('http://localhost:5000/api/Infraestruturas/RodarBat')
+        api.get('/Infraestruturas/RodarBat')
 
             .then(resposta => {
                 if (resposta.status === 200) {
@@ -118,26 +122,49 @@ export default class HeaderF extends Component {
                                         <h2>EC2</h2>
                                         <div className="input-group input-group2">
                                             <div className="input-group-column">
-                                                <input type="text" placeholder="Zona de Disponibilidade" 
-                                                name='idZona'
-                                                onChange={this.atualizaStateCampo}
-                                                value={this.state.idZona}/>
-
-                                                <input type="text" placeholder="Sistema Operacional" 
-                                                name='idSoftware'
-                                                onChange={this.atualizaStateCampo}
-                                                value={this.state.idSoftware}/>
-
-                                                {/* <input type="text" placeholder="Tipo de Instância" /> */}
-                                            </div>
-                                            <div className="input-group-column">
                                                 {/* <input type="text" placeholder="Sistema Operacional" /> */}
-                                                <input type="text" placeholder="Tipo de Instância" 
-                                                name='idInstancia'
-                                                onChange={this.atualizaStateCampo}
-                                                value={this.state.idInstancia}/>
+                                                <input type="text" placeholder="Tipo de Instância"
+                                                    name='idInstancia'
+                                                    onChange={this.atualizaStateCampo}
+                                                    value={this.state.idInstancia} />
 
                                                 {/* <input type="text" placeholder="CPU" /> */}
+                                            </div>
+                                            <div className="input-group-column">
+                                                <select
+                                                 name="idInstancia"
+                                                 value={this.state.idInstancia}
+                                                 onChange={this.atualizaStateCampo}>
+                                                    <option value="0" selected disabled>
+                                                        opção 0
+                                                    </option>
+                                                    <option value="1">opção 1</option>
+                                                    <option value="2">opção 2</option>
+                                                </select>
+                                            </div>
+                                            <div className="input-group-column">
+                                                <select
+                                                 name="idZona"
+                                                 value={this.state.idZona}
+                                                 onChange={this.atualizaStateCampo}>
+                                                    <option value="0" selected disabled>
+                                                        opção 0
+                                                    </option>
+                                                    <option value="1">opção 1</option>
+                                                    <option value="2">opção 2</option>
+                                                </select>
+                                            </div>
+                                            <div className="input-group-column">
+                                                <select
+                                                 name="idSoftware"
+                                                 value={this.state.idSoftware}
+                                                 onChange={this.atualizaStateCampo}>
+                                                    <option value="0" selected disabled>
+                                                        opção 0
+                                                    </option>
+                                                    <option value="1">opção 1</option>
+                                                    <option value="2">opção 2</option>
+                                                </select>
                                             </div>
                                         </div>
 
@@ -154,6 +181,7 @@ export default class HeaderF extends Component {
                                                 <input type="text" placeholder="Zona de Disponibilidade" />
                                             </div>
                                         </div> */}
+                                        <p style={{ color: 'red' }}>{this.state.erroMensagem}</p>
                                         <button type="submit" className="btn-formL" /* onClick executar cadastro, se cadastro der certo, fechar modal; senão mostrar mensagem de erro*/ >Cadastrar</button>
                                     </form>
                                 </div>

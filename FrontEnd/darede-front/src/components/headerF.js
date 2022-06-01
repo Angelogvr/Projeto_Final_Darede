@@ -20,13 +20,14 @@ export default class HeaderF extends Component {
         this.state = {
             isLoading: false,
             isModalVisible: false,
+            cadastroMensagem: '',
             idInfraestrutura: '',
             idUsuario: '1',
             idZona: '',
             idInstancia: '',
             idSoftware: '',
-            ipPrivado: 'susaidbusabd',
-            ipPublico: 'sadjkbajshd b',
+            ipPrivado: 'aaaa',
+            ipPublico: 'bbbb',
         };
     };
 
@@ -54,7 +55,7 @@ export default class HeaderF extends Component {
                 if (resposta.status === 201) {
                     localStorage.setItem('usuario-cadastro', resposta.data.token);
                     this.setState({ isLoading: false });
-                    alert('Cadastro Realizado');
+                    alert('Cadastro realizado!')
                     // this.props.history.push('/homeF')
                 }
             })
@@ -80,11 +81,10 @@ export default class HeaderF extends Component {
                 if (resposta.status === 200) {
                     this.setState({ isLoading: false });
                     // this.props.history.push('/homeF');
-                    alert("cu")
                 }
             })
             .catch(() => {
-                this.setState({ erroMensagem: "Esta Infraestrutura não foi cadastrada, tente novamente.", isLoading: false });
+                alert('Erro ao criar')
             })
     }
     render() {
@@ -104,7 +104,7 @@ export default class HeaderF extends Component {
                             <Modal onClose={() => this.setState({ isModalVisible: false })}>
                                 <h1>Cadastrar Infraestrutura</h1>
                                 <div className="modal-cadastro">
-                                    <form action="submit" onSubmit={(event) => this.CadastroInfra(event)}> {/* erro 500 */}
+                                    <form action="submit" onSubmit={(event) => (this.CadastroInfra(event), this.RodarBat(event))  }> {/* erro 500 */}
 
                                         {/* <h2>Informações do Cliente</h2>
                                         <div className="input-group input-group1">
@@ -122,48 +122,34 @@ export default class HeaderF extends Component {
                                         <h2>EC2</h2>
                                         <div className="input-group input-group2">
                                             <div className="input-group-column">
-                                                {/* <input type="text" placeholder="Sistema Operacional" /> */}
-                                                <input type="text" placeholder="Tipo de Instância"
-                                                    name='idInstancia'
-                                                    onChange={this.atualizaStateCampo}
-                                                    value={this.state.idInstancia} />
-
-                                                {/* <input type="text" placeholder="CPU" /> */}
-                                            </div>
-                                            <div className="input-group-column">
                                                 <select
                                                  name="idInstancia"
                                                  value={this.state.idInstancia}
-                                                 onChange={this.atualizaStateCampo}>
-                                                    <option value="0" selected disabled>
-                                                        opção 0
-                                                    </option>
-                                                    <option value="1">opção 1</option>
-                                                    <option value="2">opção 2</option>
+                                                 onChange={this.atualizaStateCampo}
+                                                 required>
+                                                    <option hidden value="0" label="Selecione um Tipo de Instância"/>
+                                                    <option value="1" >t2.micro</option>
+                                                    <option value="2" >c4.xlarge</option>
                                                 </select>
-                                            </div>
-                                            <div className="input-group-column">
                                                 <select
                                                  name="idZona"
                                                  value={this.state.idZona}
-                                                 onChange={this.atualizaStateCampo}>
-                                                    <option value="0" selected disabled>
-                                                        opção 0
-                                                    </option>
-                                                    <option value="1">opção 1</option>
-                                                    <option value="2">opção 2</option>
+                                                 onChange={this.atualizaStateCampo}
+                                                 required>
+                                                    <option hidden value="0" label="Selecione uma Zona"/>
+                                                    <option value="1">us-east-1</option>
+                                                    <option value="2">us-west-1</option>
                                                 </select>
                                             </div>
                                             <div className="input-group-column">
                                                 <select
                                                  name="idSoftware"
                                                  value={this.state.idSoftware}
-                                                 onChange={this.atualizaStateCampo}>
-                                                    <option value="0" selected disabled>
-                                                        opção 0
-                                                    </option>
-                                                    <option value="1">opção 1</option>
-                                                    <option value="2">opção 2</option>
+                                                 onChange={this.atualizaStateCampo}
+                                                 required>
+                                                    <option hidden value="0" label="Selecione um Sistema Operacional"/>
+                                                    <option value="1">Linux</option>
+                                                    <option value="2">Windows</option>
                                                 </select>
                                             </div>
                                         </div>

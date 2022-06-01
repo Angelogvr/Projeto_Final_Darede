@@ -63,12 +63,12 @@ namespace senai.darede.WebAPI.Repositories
 
         public void ExecutarBat(string command)
         {
-            /*var p = new Process();
+            var p = new Process();
             p.StartInfo = new ProcessStartInfo(@"C:\Users\47509398894.INFOSCS\Desktop\Terraform-executar\terraform.bat")
             {
                 UseShellExecute = true
             };
-            p.Start();*/
+            p.Start();
         }
     }
 }

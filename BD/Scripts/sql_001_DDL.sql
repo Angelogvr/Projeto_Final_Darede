@@ -73,3 +73,7 @@ CREATE TABLE infraestrutura(
 	ativo BIT DEFAULT(1) NOT NULL,
 )
 GO
+
+ALTER TABLE infraestrutura
+ALTER COLUMN ipPublico VARCHAR(20);
+go

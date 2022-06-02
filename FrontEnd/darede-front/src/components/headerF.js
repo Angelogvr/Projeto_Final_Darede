@@ -26,8 +26,8 @@ export default class HeaderF extends Component {
             idZona: '',
             idInstancia: '',
             idSoftware: '',
-            ipPrivado: 'aaaa',
-            ipPublico: 'bbbb',
+            ipPrivado: '',
+            ipPublico: '',
         };
     };
 

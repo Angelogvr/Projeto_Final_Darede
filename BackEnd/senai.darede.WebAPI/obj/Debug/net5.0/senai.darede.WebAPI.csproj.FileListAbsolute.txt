@@ -158,3 +158,4 @@ C:\Users\47509398894.INFOSCS\Desktop\Darede-Project\BackEnd\senai.darede.WebAPI\
 C:\Users\47509398894.INFOSCS\Desktop\Darede-Project\BackEnd\senai.darede.WebAPI\obj\Debug\net5.0\senai.darede.WebAPI.xml
 C:\Users\47509398894.INFOSCS\Desktop\Darede-Project\BackEnd\senai.darede.WebAPI\obj\Debug\net5.0\senai.darede.WebAPI.pdb
 C:\Users\47509398894.INFOSCS\Desktop\Darede-Project\BackEnd\senai.darede.WebAPI\obj\Debug\net5.0\senai.darede.WebAPI.genruntimeconfig.cache
+C:\Users\47509398894.INFOSCS\Desktop\Darede-Project\BackEnd\senai.darede.WebAPI\bin\Debug\net5.0\DevOne.Security.Cryptography.BCrypt.dll

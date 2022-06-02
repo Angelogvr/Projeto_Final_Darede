@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="BCrypt" Version="1.0.0" />
     <PackageReference Include="Constructs" Version="10.1.4" />
     <PackageReference Include="HashiCorp.Cdktf.Providers.Aws" Version="7.0.49" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.15" />

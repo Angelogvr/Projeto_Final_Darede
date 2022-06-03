@@ -70,5 +70,10 @@ namespace senai.darede.WebAPI.Repositories
             };
             p.Start();
         }
+
+        public void EscreverArquivo(string command)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

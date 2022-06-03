@@ -28,8 +28,11 @@ export default class HeaderF extends Component {
             idSoftware: '',
             ipPrivado: '',
             ipPublico: '',
+            data: 'abacate'
         };
-    };
+    }
+
+    
 
     CadastroInfra = (event) => {
         event.preventDefault();

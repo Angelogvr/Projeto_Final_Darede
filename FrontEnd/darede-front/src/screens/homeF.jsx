@@ -23,7 +23,7 @@ function HomeF() {
                     <div className='box-infraestrutura'>
                         <div className='content-infraestrutura'>
                             <h2>Infraestrutura Loggex</h2>
-                            <p>Infraestrutura da empresa Loggex para hospedar o site e aplicativo do seu serviço contém serviços como IIS e DNS para hospedagem destes.</p>
+                            <p>Infraestrutura da empresa Loggex para hospedar o site e aplicativo do seu serviço contém serviços como IIS e DNS para hospedagem dos mesmos.</p>
                         </div>
                         <div className='content-lateral'>
                             <button onClick={() => setIsModalVisible(true)}>

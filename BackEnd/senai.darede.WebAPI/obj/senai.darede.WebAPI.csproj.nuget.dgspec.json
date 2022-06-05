@@ -1,7 +1,6 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
     "C:\\Users\\marda\\OneDrive\\Área de Trabalho\\TrabalhosBiel\\Projeto_Final_Darede\\BackEnd\\senai.darede.WebAPI\\senai.darede.WebAPI.csproj": {}
   },
   "projects": {
@@ -13,19 +12,6 @@
         "projectPath": "C:\\Users\\marda\\OneDrive\\Área de Trabalho\\TrabalhosBiel\\Projeto_Final_Darede\\BackEnd\\senai.darede.WebAPI\\senai.darede.WebAPI.csproj",
         "packagesPath": "C:\\Users\\marda\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\marda\\OneDrive\\Área de Trabalho\\TrabalhosBiel\\Projeto_Final_Darede\\BackEnd\\senai.darede.WebAPI\\obj\\",
-=======
-    "C:\\Users\\47509398894.INFOSCS\\Desktop\\Darede-Project\\BackEnd\\senai.darede.WebAPI\\senai.darede.WebAPI.csproj": {}
-  },
-  "projects": {
-    "C:\\Users\\47509398894.INFOSCS\\Desktop\\Darede-Project\\BackEnd\\senai.darede.WebAPI\\senai.darede.WebAPI.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\47509398894.INFOSCS\\Desktop\\Darede-Project\\BackEnd\\senai.darede.WebAPI\\senai.darede.WebAPI.csproj",
-        "projectName": "senai.darede.WebAPI",
-        "projectPath": "C:\\Users\\47509398894.INFOSCS\\Desktop\\Darede-Project\\BackEnd\\senai.darede.WebAPI\\senai.darede.WebAPI.csproj",
-        "packagesPath": "C:\\Users\\47509398894.INFOSCS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\47509398894.INFOSCS\\Desktop\\Darede-Project\\BackEnd\\senai.darede.WebAPI\\obj\\",
->>>>>>> ac5eeef2fdf575ac90987fdaecd9ac2a8419ecd6
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\marda\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -115,7 +101,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\5.0.213\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\5.0.214\\RuntimeIdentifierGraph.json"
         }
       }
     }

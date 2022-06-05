@@ -235,6 +235,7 @@ C:\Users\47509398894.INFOSCS\Desktop\Darede-Project\BackEnd\senai.darede.WebAPI\
 C:\Users\47509398894.INFOSCS\Desktop\Darede-Project\BackEnd\senai.darede.WebAPI\obj\Debug\net5.0\senai.darede.WebAPI.xml
 C:\Users\47509398894.INFOSCS\Desktop\Darede-Project\BackEnd\senai.darede.WebAPI\obj\Debug\net5.0\senai.darede.WebAPI.pdb
 C:\Users\47509398894.INFOSCS\Desktop\Darede-Project\BackEnd\senai.darede.WebAPI\obj\Debug\net5.0\senai.darede.WebAPI.genruntimeconfig.cache
+<<<<<<< HEAD
 >>>>>>> ac5eeef2fdf575ac90987fdaecd9ac2a8419ecd6
 C:\Users\marda\OneDrive\Área de Trabalho\TrabalhosBiel\Projeto_Final_Darede\BackEnd\senai.darede.WebAPI\bin\Debug\net5.0\Amazon.JSII.Runtime.dll
 C:\Users\marda\OneDrive\Área de Trabalho\TrabalhosBiel\Projeto_Final_Darede\BackEnd\senai.darede.WebAPI\bin\Debug\net5.0\Constructs.dll
@@ -242,3 +243,6 @@ C:\Users\marda\OneDrive\Área de Trabalho\TrabalhosBiel\Projeto_Final_Darede\Bac
 C:\Users\marda\OneDrive\Área de Trabalho\TrabalhosBiel\Projeto_Final_Darede\BackEnd\senai.darede.WebAPI\bin\Debug\net5.0\HashiCorp.Cdktf.Providers.Aws.dll
 C:\Users\marda\OneDrive\Área de Trabalho\TrabalhosBiel\Projeto_Final_Darede\BackEnd\senai.darede.WebAPI\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 C:\Users\marda\OneDrive\Área de Trabalho\TrabalhosBiel\Projeto_Final_Darede\BackEnd\senai.darede.WebAPI\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll
+=======
+C:\Users\47509398894.INFOSCS\Desktop\Darede-Project\BackEnd\senai.darede.WebAPI\bin\Debug\net5.0\DevOne.Security.Cryptography.BCrypt.dll
+>>>>>>> ea4c30a817ce986702351d3361d830639899377f

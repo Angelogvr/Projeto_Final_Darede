@@ -8,7 +8,7 @@
 
 .modal{
     width: 100%;
-    height: 112vh;
+    height: 100vh;
     position: absolute;
     top: 0;
     left: 0;
@@ -38,8 +38,7 @@
     border: solid black 1px;
     border-radius: 10px;
     color: black;
-    width: 60%;
-    height: 82%;
+    height: 50%;
 }
 
 .modal-content{
@@ -100,12 +99,30 @@
 .input-group-column{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 
 .modal-cadastro h2{
     width: 65%;
     display: flex;
     justify-content: flex-start;
+}
+
+p{
+    display: flex;
+    justify-content: center;
+}
+
+select{
+    width: 18rem;
+    height: 3rem;
+    border-radius: 5px;
+    border-color: 1px black;
+    padding: 0px 5px;
+    margin-top: 15px;
+}
+
+select{
 }
 
 /*------------------------------------------------*/

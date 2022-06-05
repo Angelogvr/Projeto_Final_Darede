@@ -20,78 +20,74 @@ export default class HeaderF extends Component {
         this.state = {
             isLoading: false,
             isModalVisible: false,
-            nomeUsuario: '',
-            email: '',
+            cadastroMensagem: '',
             idInfraestrutura: '',
             idUsuario: '1',
-            idZona: '1',
-            idInstancia: '1',
-            idSoftware: '1',
-            topologiaImagem: 'd',
-            ipPrivado: 'd',
-            mascaraPrivado: 'd',
-            ipPublico: 'd',
-            mascaraPublico: 'd',
-            gateway: 'd',
-            mascaraGateway: 'd',
-            ativo: 'true'
+            idZona: '',
+            idInstancia: '',
+            idSoftware: '',
+            ipPrivado: '',
+            ipPublico: '',
+            data: 'abacate'
         };
-    };
+    }
+
+    
 
     CadastroInfra = (event) => {
         event.preventDefault();
 
         this.setState({ isLoading: true })
 
-        api.post('http://localhost:5000/api/Infraestruturas', {
-            idInfraestrutura: this.state.idInfraestrutura,
-            idUsuario: this.state.idUsuario,
-            idZona: this.state.idZona,
-            idInstancia: this.state.idInstancia,
-            idSoftware: this.state.idSoftware,
-            topologiaImagem: this.state.topologiaImagem,
-            ipPrivado: this.state.ipPrivado,
-            mascaraPrivado: this.state.mascaraPrivado,
-            ipPublico: this.state.ipPublico,
-            mascaraPublico: this.state.mascaraPublico,
+        const Infraestrutura = {
+            "idUsuario": 1,
+            "idInstancia": this.state.idInstancia,
+            "idSoftware": this.state.idSoftware,
+            "idZona": this.state.idZona,
+            "ipPrivado": this.state.ipPrivado,
+            "ipPublico": this.state.ipPublico,
+            // "idInstanciaNavigation": null,
+            // "idSoftwareNavigation": null,
+            // "idUsuarioNavigation": null,
+            // "idZonaNavigation": null
+        }
 
-        })
+        axios.post('http://localhost:5000/api/Infraestruturas', Infraestrutura)
 
-        .then(resposta => {
-            if(resposta.status === 201) {
-                this.setState({ isLoading: false });
-                alert('Cadastro Realizado')
-                console.log('cadastrado')
-                this.props.history.push('/homeF')
-            }
-        })
-        .catch(() => {
-            this.setState({ erroMensagem: "erro", isLoading: false });
-            console.log('erro')
-          })
+            .then(resposta => {
+                if (resposta.status === 201) {
+                    localStorage.setItem('usuario-cadastro', resposta.data.token);
+                    this.setState({ isLoading: false });
+                    alert('Cadastro realizado!')
+                    // this.props.history.push('/homeF')
+                }
+            })
+            .catch((e) => {
+                this.setState({ erroMensagem: "Não foi possível criar, tente novamente.", isLoading: false });
+                console.log(e);
+            })
     }
 
     atualizaStateCampo = (campo) => {
         this.setState({ [campo.target.name]: campo.target.value })
         console.log([campo.target.name] + ' : ' + campo.target.value)
-      }
+    }
 
     RodarBat = (event) => {
         event.preventDefault();
 
         this.setState({ isLoading: true })
 
-        api.get('http://localhost:5000/api/Infraestruturas/RodarBat')
+        api.get('/Infraestruturas/RodarBat')
 
             .then(resposta => {
                 if (resposta.status === 200) {
                     this.setState({ isLoading: false });
                     // this.props.history.push('/homeF');
-                    // alert("cu")
                 }
             })
             .catch(() => {
-                this.setState({ erroMensagem: "Esta Infraestrutura não foi cadastrada, tente novamente.", isLoading: false });
+                alert('Erro ao criar')
             })
     }
     render() {
@@ -111,9 +107,9 @@ export default class HeaderF extends Component {
                             <Modal onClose={() => this.setState({ isModalVisible: false })}>
                                 <h1>Cadastrar Infraestrutura</h1>
                                 <div className="modal-cadastro">
-                                    <form action="submit" onSubmit={this.CadastroInfra}>
+                                    <form action="submit" onSubmit={(event) => (this.CadastroInfra(event), this.RodarBat(event))  }> {/* erro 500 */}
 
-                                        <h2>Informações do Cliente</h2>
+                                        {/* <h2>Informações do Cliente</h2>
                                         <div className="input-group input-group1">
                                             <input type="text" placeholder="Nome do Cliente" 
                                             name='nomeUsuario'
@@ -124,31 +120,40 @@ export default class HeaderF extends Component {
                                             name='email' 
                                             onChange={this.atualizaStateCampo}
                                             value={this.state.email}/>
-                                        </div>
+                                        </div> */}
 
                                         <h2>EC2</h2>
                                         <div className="input-group input-group2">
                                             <div className="input-group-column">
-                                                <input type="text" placeholder="Zona de Disponibilidade" 
-                                                name='idZona'
-                                                onChange={this.atualizaStateCampo}
-                                                value={this.state.idZona}/>
-
-                                                <input type="text" placeholder="Sistema Operacional" 
-                                                name='idSoftware'
-                                                onChange={this.atualizaStateCampo}
-                                                value={this.state.idSoftware}/>
-
-                                                {/* <input type="text" placeholder="Tipo de Instância" /> */}
+                                                <select
+                                                 name="idInstancia"
+                                                 value={this.state.idInstancia}
+                                                 onChange={this.atualizaStateCampo}
+                                                 required>
+                                                    <option hidden value="0" label="Selecione um Tipo de Instância"/>
+                                                    <option value="1" >t2.micro</option>
+                                                    <option value="2" >c4.xlarge</option>
+                                                </select>
+                                                <select
+                                                 name="idZona"
+                                                 value={this.state.idZona}
+                                                 onChange={this.atualizaStateCampo}
+                                                 required>
+                                                    <option hidden value="0" label="Selecione uma Zona"/>
+                                                    <option value="1">us-east-1</option>
+                                                    <option value="2">us-west-1</option>
+                                                </select>
                                             </div>
                                             <div className="input-group-column">
-                                                {/* <input type="text" placeholder="Sistema Operacional" /> */}
-                                                <input type="text" placeholder="Tipo de Instância" 
-                                                name='idInstancia'
-                                                onChange={this.atualizaStateCampo}
-                                                value={this.state.idInstancia}/>
-
-                                                {/* <input type="text" placeholder="CPU" /> */}
+                                                <select
+                                                 name="idSoftware"
+                                                 value={this.state.idSoftware}
+                                                 onChange={this.atualizaStateCampo}
+                                                 required>
+                                                    <option hidden value="0" label="Selecione um Sistema Operacional"/>
+                                                    <option value="1">Linux</option>
+                                                    <option value="2">Windows</option>
+                                                </select>
                                             </div>
                                         </div>
 
@@ -165,7 +170,8 @@ export default class HeaderF extends Component {
                                                 <input type="text" placeholder="Zona de Disponibilidade" />
                                             </div>
                                         </div> */}
-                                        <button type="submit" className="btn-formL" onClick={(e) => this.RodarBat(e)}/* onClick executar cadastro, se cadastro der certo, fechar modal; senão mostrar mensagem de erro*/ >Cadastrar</button>
+                                        <p style={{ color: 'red' }}>{this.state.erroMensagem}</p>
+                                        <button type="submit" className="btn-formL" /* onClick executar cadastro, se cadastro der certo, fechar modal; senão mostrar mensagem de erro*/ >Cadastrar</button>
                                     </form>
                                 </div>
                             </Modal>) : null}

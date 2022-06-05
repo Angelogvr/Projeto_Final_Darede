@@ -18,12 +18,13 @@
 .box-bodyL{
     display: flex;
     flex-direction: row;
-    height: 837px;
+    height: 969px;
 }
 
 .esquerdaL{
     background-color:#00964F;
     width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;

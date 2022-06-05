@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "AoBG2EP59M7Md0ZiaNAA1x+oDpDBmHX2C7EMP2hhnnrCDMyYlwckrCj+ihjLyXMx3tet8xsVV6SaiQu+kLFvbA==",
+  "dgSpecHash": "+xfN7dz3HlmGOGkNAl029ieHEc1ZSocXbr39MtRzw0u8ioxC8tktEUvRCFc1sotzsKJz/kJ1f9mQvNnWr3gKgA==",
   "success": true,
   "projectFilePath": "C:\\Users\\marda\\OneDrive\\Área de Trabalho\\TrabalhosBiel\\Projeto_Final_Darede\\BackEnd\\senai.darede.WebAPI\\senai.darede.WebAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\marda\\.nuget\\packages\\amazon.jsii.runtime\\1.58.0\\amazon.jsii.runtime.1.58.0.nupkg.sha512",
+    "C:\\Users\\marda\\.nuget\\packages\\bcrypt\\1.0.0\\bcrypt.1.0.0.nupkg.sha512",
     "C:\\Users\\marda\\.nuget\\packages\\constructs\\10.1.4\\constructs.10.1.4.nupkg.sha512",
     "C:\\Users\\marda\\.nuget\\packages\\hashicorp.cdktf\\0.10.3\\hashicorp.cdktf.0.10.3.nupkg.sha512",
     "C:\\Users\\marda\\.nuget\\packages\\hashicorp.cdktf.providers.aws\\7.0.49\\hashicorp.cdktf.providers.aws.7.0.49.nupkg.sha512",
@@ -166,6 +167,16 @@
       "level": "Warning",
       "warningLevel": 1,
       "message": "Problema ao ler o arquivo de cache C:\\Users\\marda\\OneDrive\\Área de Trabalho\\TrabalhosBiel\\Projeto_Final_Darede\\BackEnd\\senai.darede.WebAPI\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "O pacote 'BCrypt 1.0.0' foi restaurado usando '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' em vez da estrutura de destino do projeto 'net5.0'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
+      "libraryId": "BCrypt",
+      "targetGraphs": [
+        "net5.0"
+      ]
     }
   ]
 }

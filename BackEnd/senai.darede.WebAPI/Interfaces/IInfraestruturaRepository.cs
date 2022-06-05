@@ -44,5 +44,7 @@ namespace senai.darede.WebAPI.Interfaces
         public List<Infraestrutura> MinhasInfraestruturas(int idUsuario);
 
         void ExecutarBat(string command);
+
+        void EscreverArquivo(string command);
     }
 }

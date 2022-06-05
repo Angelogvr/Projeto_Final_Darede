@@ -17,6 +17,15 @@
           "lib/netcoreapp3.1/Amazon.JSII.Runtime.dll": {}
         }
       },
+      "BCrypt/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/DevOne.Security.Cryptography.BCrypt.dll": {}
+        },
+        "runtime": {
+          "lib/DevOne.Security.Cryptography.BCrypt.dll": {}
+        }
+      },
       "Constructs/10.1.4": {
         "type": "package",
         "dependencies": {
@@ -2434,6 +2443,18 @@
         "amazon.jsii.runtime.nuspec",
         "icon.png",
         "lib/netcoreapp3.1/Amazon.JSII.Runtime.dll"
+      ]
+    },
+    "BCrypt/1.0.0": {
+      "sha512": "/ibwe2Sg7MJR26IrEzW2Rde9/+A+AYXB5Kf9w/8BVLDdzSfUe4W2M7i2efy1Wa9wHh1k0y81Q6h9Ty8C6IrUGA==",
+      "type": "package",
+      "path": "bcrypt/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "bcrypt.1.0.0.nupkg.sha512",
+        "bcrypt.nuspec",
+        "lib/DevOne.Security.Cryptography.BCrypt.dll"
       ]
     },
     "Constructs/10.1.4": {
@@ -8074,6 +8095,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "BCrypt >= 1.0.0",
       "Constructs >= 10.1.4",
       "HashiCorp.Cdktf.Providers.Aws >= 7.0.49",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 5.0.15",
@@ -8125,6 +8147,10 @@
       "net5.0": {
         "targetAlias": "net5.0",
         "dependencies": {
+          "BCrypt": {
+            "target": "Package",
+            "version": "[1.0.0, )"
+          },
           "Constructs": {
             "target": "Package",
             "version": "[10.1.4, )"
@@ -8196,6 +8222,16 @@
       "level": "Warning",
       "warningLevel": 1,
       "message": "Problema ao ler o arquivo de cache C:\\Users\\marda\\OneDrive\\Área de Trabalho\\TrabalhosBiel\\Projeto_Final_Darede\\BackEnd\\senai.darede.WebAPI\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "O pacote 'BCrypt 1.0.0' foi restaurado usando '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' em vez da estrutura de destino do projeto 'net5.0'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
+      "libraryId": "BCrypt",
+      "targetGraphs": [
+        "net5.0"
+      ]
     }
   ]
 }

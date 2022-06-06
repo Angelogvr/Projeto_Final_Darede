@@ -245,3 +245,4 @@ C:\Users\marda\OneDrive\Área de Trabalho\TrabalhosBiel\Projeto_Final_Darede\Bac
 C:\Users\47509398894.INFOSCS\Desktop\Darede-Project\BackEnd\senai.darede.WebAPI\bin\Debug\net5.0\DevOne.Security.Cryptography.BCrypt.dll
 >>>>>>> ea4c30a817ce986702351d3361d830639899377f
 C:\Users\marda\OneDrive\Área de Trabalho\TrabalhosBiel\Projeto_Final_Darede\BackEnd\senai.darede.WebAPI\bin\Debug\net5.0\DevOne.Security.Cryptography.BCrypt.dll
+C:\Users\47509398894.INFOSCS\Desktop\Darede-Project\BackEnd\senai.darede.WebAPI\bin\Debug\net5.0\senai.darede.WebAPI.StaticWebAssets.xml

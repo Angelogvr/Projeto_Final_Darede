@@ -45,6 +45,6 @@ namespace senai.darede.WebAPI.Interfaces
 
         void ExecutarBat(string command);
 
-        void EscreverArquivo(string command);
+        void EscreverArquivo(string commando);
     }
 }

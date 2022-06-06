@@ -129,5 +129,12 @@ namespace senai.darede.WebAPI.Contexts
             _InfraestruturaRepository.ExecutarBat("");
             return StatusCode(200); 
         }
+
+        [HttpGet("EscreverArquivo")]
+        public IActionResult GetActionResult()
+        {
+            _InfraestruturaRepository.EscreverArquivo("");
+            return StatusCode(200);
+        }
     }
 }

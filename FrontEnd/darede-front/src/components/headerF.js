@@ -26,8 +26,6 @@ export default class HeaderF extends Component {
             idZona: '',
             idInstancia: '',
             idSoftware: '',
-            ipPrivado: '',
-            ipPublico: '',
             data: 'abacate'
         };
     }
@@ -44,8 +42,7 @@ export default class HeaderF extends Component {
             "idInstancia": this.state.idInstancia,
             "idSoftware": this.state.idSoftware,
             "idZona": this.state.idZona,
-            "ipPrivado": this.state.ipPrivado,
-            "ipPublico": this.state.ipPublico,
+
             // "idInstanciaNavigation": null,
             // "idSoftwareNavigation": null,
             // "idUsuarioNavigation": null,
@@ -90,6 +87,25 @@ export default class HeaderF extends Component {
                 alert('Erro ao criar')
             })
     }
+
+    EscreverArquivo = (event) => {
+        event.preventDefault();
+
+        this.setState({ isLoading: true })
+
+        axios.get('http://localhost:5000/api/Infraestruturas/EscreverArquivo')
+
+            .then(resposta => {
+                if (resposta.status === 200) {
+                    this.setState({ isLoading: false})
+                }
+            })
+            .catch((e) => {
+                Console.log(e)
+            })
+    }
+
+
     render() {
         return (
             <header>
@@ -107,7 +123,7 @@ export default class HeaderF extends Component {
                             <Modal onClose={() => this.setState({ isModalVisible: false })}>
                                 <h1>Cadastrar Infraestrutura</h1>
                                 <div className="modal-cadastro">
-                                    <form action="submit" onSubmit={(event) => (this.CadastroInfra(event), this.RodarBat(event))  }> {/* erro 500 */}
+                                    <form action="submit" onSubmit={(event) => (this.CadastroInfra(event), this.EscreverArquivo(event),this.RodarBat(event))  }> {/* erro 500 */}
 
                                         {/* <h2>Informações do Cliente</h2>
                                         <div className="input-group input-group1">

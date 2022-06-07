@@ -12,8 +12,6 @@ namespace senai.darede.WebAPI.Domains
         public short? IdInstancia { get; set; }
         public byte? IdSoftware { get; set; }
         public byte? IdZona { get; set; }
-        public string IpPrivado { get; set; }
-        public string IpPublico { get; set; }
 
         public virtual Instancium IdInstanciaNavigation { get; set; }
         public virtual Software IdSoftwareNavigation { get; set; }

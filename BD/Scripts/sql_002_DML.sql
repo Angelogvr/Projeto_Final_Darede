@@ -46,9 +46,9 @@ VALUES
 GO
 
 INSERT INTO infraestrutura
-(idUsuario, idInstancia, idSoftware, idZona, topologiaImagem, ipPrivado, mascaraPrivado, ipPublico, mascaraPublico, gateway, mascaraGateway, ativo)
+(idUsuario, idInstancia, idSoftware, idZona)
 VALUES
-	('1', '1', '1',  '1', 'abc.png', '1xx.xxx.xxx.xxx', '/xx', '1xx.xxx.xxx.xxx', '/xx', '1xx.xxx.xxx.xxx', '/xx', '1'),
-	('2', '2', '2', '2', 'def.png', '2xx.xxx.xxx.xxx', '/xx', '2xx.xxx.xxx.xxx', '/xx', '2xx.xxx.xxx.xxx', '/xx', '1'),
-	('2', '3', '2',  '2', 'ghi.png', '3xx.xxx.xxx.xxx', '/xx', '3xx.xxx.xxx.xxx', '/xx', '3xx.xxx.xxx.xxx', '/xx', '0')
+	('1', '1', '1',  '1'),
+	('2', '2', '2', '2'),
+	('2', '3', '2',  '2')
 GO

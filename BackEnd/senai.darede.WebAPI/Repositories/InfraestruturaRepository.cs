@@ -25,8 +25,6 @@ namespace senai.darede.WebAPI.Repositories
                 infraestruturaBuscada.IdUsuario = infraestruturaAtualizada.IdUsuario;
                 infraestruturaBuscada.IdInstancia = infraestruturaAtualizada.IdInstancia;
                 infraestruturaBuscada.IdSoftware = infraestruturaAtualizada.IdSoftware;
-                infraestruturaBuscada.IpPrivado = infraestruturaAtualizada.IpPrivado;
-                infraestruturaBuscada.IpPublico = infraestruturaAtualizada.IpPublico;
 
             }
 

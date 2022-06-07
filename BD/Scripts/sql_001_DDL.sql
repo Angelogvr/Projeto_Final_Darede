@@ -58,19 +58,6 @@ CREATE TABLE infraestrutura(
 	idInstancia SMALLINT FOREIGN KEY REFERENCES instancia(idInstancia),
 	idSoftware TINYINT FOREIGN KEY REFERENCES software(idSoftware),
 	idZona TINYINT FOREIGN KEY REFERENCES zona(idZona),
-
-	topologiaImagem VARCHAR(256) NOT NULL,
-
-	ipPrivado VARCHAR(20) UNIQUE NOT NULL,
-	mascaraPrivado VARCHAR(15) NOT NULL,
-	
-	ipPublico VARCHAR(20) UNIQUE NOT NULL,
-	mascaraPublico VARCHAR(15) NOT NULL,
-	
-	gateway VARCHAR(20) NOT NULL,
-	mascaraGateway VARCHAR(15) NOT NULL,
-	
-	ativo BIT DEFAULT(1) NOT NULL,
 )
 GO
 

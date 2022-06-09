@@ -32,9 +32,9 @@ export default class HomeF extends Component {
                                 <p>Infraestrutura da empresa Loggex para hospedar o site e aplicativo do seu serviço contém serviços como IIS e DNS para hospedagem dos mesmos.</p>
                             </div>
                             <div className='content-lateral'>
-                                <button onClick={() => this.setState({ isModalVisible: true })}>
+                                {/* <button onClick={() => this.setState({ isModalVisible: true })}>
                                     <img src={info} alt="icon-info" />
-                                </button>
+                                </button> */}
                                 <button>
                                     <img src={star} alt="star-info" />
                                 </button>
@@ -73,9 +73,9 @@ export default class HomeF extends Component {
                                 <p>Infraestrutura da empresa 4RP para uso corporativo. Contém serviços como AD, para fazer o controle de usuários dos funcionários, DNS, DHCP, IIS, para hospedar os sites para uso da empresa.</p>
                             </div>
                             <div className='content-lateral'>
-                                <button onClick={() => this.setState({ isModalVisible: true })}>
+                                {/* <button onClick={() => this.setState({ isModalVisible: true })}>
                                     <img src={info} alt="icon-info" />
-                                </button>
+                                </button> */}
                                 <button>
                                     <img src={star} alt="star-info" />
                                 </button>
@@ -107,21 +107,6 @@ export default class HomeF extends Component {
                                         </div>
                                     </div>
                                 </Modal>) : null}
-                        </div>
-                        <div className='box-infraestrutura'>
-                            <div className='content-infraestrutura'>
-                                <h2>Infraestrutura C NAI</h2>
-                                <p>Infraestrutura da instituição de ensino C NAI. Serviços para hospedagem de sites com Informações das escolas e, controle de dados dos alunos e funcionários.</p>
-                            </div>
-                            <div className='content-lateral'>
-                                <button>
-                                    <img src={info} alt="icon-info" />
-                                </button>
-                                <button>
-                                    <img src={star} alt="star-info" />
-                                </button>
-                                {/* ativo */}
-                            </div>
                         </div>
                     </div>
                 </div>

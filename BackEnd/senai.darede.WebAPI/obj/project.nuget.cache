@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "YmyasRiU+hW2frcRBydHGj432RmQpP7CeHobQBgH2wr+mazUQ0wHeCsMIKBwmR+hl3YPejAE7Gns0cR5HrfqyQ==",
+  "dgSpecHash": "xtZxCnTDLK/KNr6xSL6qIb66egg7G6k/m46dsX0CDJ8HPsrraGN1puDVRsXedvpg2rtSTePF/WO9BngrjiKH9w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\47509398894.INFOSCS\\Desktop\\Darede-Project\\BackEnd\\senai.darede.WebAPI\\senai.darede.WebAPI.csproj",
+  "projectFilePath": "C:\\Users\\47509398894.INFOSCS\\Desktop\\Projeto_Final_Darede\\BackEnd\\senai.darede.WebAPI\\senai.darede.WebAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\47509398894.INFOSCS\\.nuget\\packages\\amazon.jsii.runtime\\1.58.0\\amazon.jsii.runtime.1.58.0.nupkg.sha512",
     "C:\\Users\\47509398894.INFOSCS\\.nuget\\packages\\bcrypt\\1.0.0\\bcrypt.1.0.0.nupkg.sha512",

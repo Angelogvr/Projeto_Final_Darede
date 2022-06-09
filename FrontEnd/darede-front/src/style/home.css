@@ -75,3 +75,12 @@
 .content-lateral button{
     border: none;
 }
+
+.gambiarra{
+    display: flex;
+}
+
+.gambiarra p{
+    display: flex;
+    justify-content: flex-start;
+}

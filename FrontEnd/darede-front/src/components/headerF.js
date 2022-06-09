@@ -56,7 +56,7 @@ export default class HeaderF extends Component {
                     localStorage.setItem('usuario-cadastro', resposta.data.token);
                     this.setState({ isLoading: false });
                     alert('Cadastro realizado!')
-                    // this.props.history.push('/homeF')
+                    this.props.history.push('/homeC')
                 }
             })
             .catch((e) => {
@@ -101,7 +101,7 @@ export default class HeaderF extends Component {
                 }
             })
             .catch((e) => {
-                Console.log(e)
+                console.log(e)
             })
     }
 
@@ -191,10 +191,6 @@ export default class HeaderF extends Component {
                                     </form>
                                 </div>
                             </Modal>) : null}
-                        <button className='button-header'>
-                            <img className='img-header button-img' src={filter} alt="icon-filtrar-por" />
-                            <span className='button-span-header'>Filtrar por</span>
-                        </button>
                         <img class='img-header icon-perfil' src={perfil} alt="icon-perfil" />
                     </div>
                 </div>

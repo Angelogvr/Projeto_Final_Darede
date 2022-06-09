@@ -8114,11 +8114,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\47509398894.INFOSCS\\Desktop\\Darede-Project\\BackEnd\\senai.darede.WebAPI\\senai.darede.WebAPI.csproj",
+      "projectUniqueName": "C:\\Users\\47509398894.INFOSCS\\Desktop\\Projeto_Final_Darede\\BackEnd\\senai.darede.WebAPI\\senai.darede.WebAPI.csproj",
       "projectName": "senai.darede.WebAPI",
-      "projectPath": "C:\\Users\\47509398894.INFOSCS\\Desktop\\Darede-Project\\BackEnd\\senai.darede.WebAPI\\senai.darede.WebAPI.csproj",
+      "projectPath": "C:\\Users\\47509398894.INFOSCS\\Desktop\\Projeto_Final_Darede\\BackEnd\\senai.darede.WebAPI\\senai.darede.WebAPI.csproj",
       "packagesPath": "C:\\Users\\47509398894.INFOSCS\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\47509398894.INFOSCS\\Desktop\\Darede-Project\\BackEnd\\senai.darede.WebAPI\\obj\\",
+      "outputPath": "C:\\Users\\47509398894.INFOSCS\\Desktop\\Projeto_Final_Darede\\BackEnd\\senai.darede.WebAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\47509398894.INFOSCS\\AppData\\Roaming\\NuGet\\NuGet.Config",
